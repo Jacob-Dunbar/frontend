@@ -28,8 +28,8 @@ function PortfolioPiece(props) {
 
   return (
     <div className={styles.portfolioCard}>
-      <img src={imageUrl} alt="thumbnail" />
-      <div className="body">
+      <img className={styles.thumbnail} src={imageUrl} alt="thumbnail" />
+      <div className={styles.body}>
         <h1>{props.title}</h1>
         <p>{props.description}</p>
         <div className={styles.stack}>{stackElements}</div>

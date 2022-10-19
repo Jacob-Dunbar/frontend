@@ -1,11 +1,16 @@
 .portfolioCard {
-  background-color: aqua;
+  border-radius: 10px;
+  overflow: hidden;
+
+  box-shadow: 0px 5px 10px 0px #00000026;
 
   display: flex;
 }
 
-.portfolioCard img {
-  width: 40%;
+.thumbnail {
+  width: 30%;
+  object-fit: cover;
+  object-position: left;
 }
 
 .stack {
@@ -17,4 +22,12 @@
 
 .stackIcon {
   width: 20px;
+}
+
+.body {
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
