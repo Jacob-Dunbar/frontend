@@ -2,6 +2,9 @@ import Head from "next/head";
 import PortfolioPiece from "../components/PortfolioPiece";
 import Navbar from "../components/Navbar";
 
+import { faMoon } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const URL = process.env.STRAPIBASEURL;
 
 export async function getStaticProps(context) {
