@@ -5,6 +5,8 @@
   box-shadow: 0px 5px 10px 0px #00000026;
 
   display: flex;
+
+  max-width: 800px;
 }
 
 .thumbnail {
