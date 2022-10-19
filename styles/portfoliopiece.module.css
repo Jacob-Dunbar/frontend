@@ -1,0 +1,13 @@
+.portfolioCard {
+  background-color: aqua;
+
+  display: flex;
+}
+
+.portfolioCard img {
+  width: 40%;
+}
+
+.stack {
+  display: flex;
+}
