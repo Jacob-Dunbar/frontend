@@ -2,6 +2,7 @@ import Head from "next/head";
 import PortfolioPiece from "../components/PortfolioPiece.js";
 import Navbar from "../components/Navbar.js";
 import Header from "../components/Header.js";
+import Contact from "../components/Contact";
 
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -75,6 +76,7 @@ export default function Home({ data }) {
       <Header />
 
       <section className="portfolioList">{portfolioElements}</section>
+      <Contact />
     </div>
   );
 }
