@@ -14,10 +14,13 @@
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@react-three/drei": "^9.37.0",
+    "@react-three/fiber": "^8.8.10",
     "@sendgrid/mail": "^7.7.0",
     "next": "12.3.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "three": "^0.145.0"
   },
   "devDependencies": {
     "eslint": "8.25.0",
