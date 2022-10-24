@@ -2,9 +2,9 @@ import { Canvas, useFrame } from "@react-three/fiber";
 
 import { Suspense, useRef, useState } from "react";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
-import Face from "./Face";
+import Face from "./Face.js";
 import css from "../styles/three.module.css";
-import Skull4 from "../components/Skull4";
+import Skull from "../components/Skull.js";
 import { useSpring, animated } from "@react-spring/three";
 
 export default function ThreeHeader() {
@@ -19,7 +19,7 @@ export default function ThreeHeader() {
         <Suspense fallback={null}>
           <ambientLight intensity={0.4} />
 
-          <animated.spotLight
+          <spotLight
             intensity={0.6}
             angle={0.9}
             penumbra={1}
@@ -43,16 +43,7 @@ export default function ThreeHeader() {
 
       <Canvas>
         <Suspense fallback={null}>
-          <ambientLight intensity={0.4} />
-
-          <animated.spotLight
-            intensity={0.6}
-            angle={0.9}
-            penumbra={1}
-            position={[10, 50, 160]}
-            castShadow
-            color={"#FFFFFF"}
-          />
+          <Skull />
         </Suspense>
       </Canvas>
     </div>

@@ -36,11 +36,11 @@ export default function Model({ ...props }) {
     }
   });
 
-  useEffect(() => {
-    if (!!orbitControlsRef.current) {
-      console.log(orbitControlsRef.current);
-    }
-  }, [orbitControlsRef.current]);
+  // useEffect(() => {
+  //   if (!!orbitControlsRef.current) {
+  //     console.log(orbitControlsRef.current);
+  //   }
+  // }, [orbitControlsRef.current]);
 
   return (
     <group ref={group} {...props} dispose={null}>
