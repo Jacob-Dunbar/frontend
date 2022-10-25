@@ -1,4 +1,4 @@
-import styles from "../styles/header.module.css";
+import styles from "../styles/header.module.scss";
 import Image from "next/image";
 import myFace from "../public/myface.jpg";
 

@@ -1,4 +1,4 @@
-import styles from "../styles/portfoliopiece.module.css";
+import styles from "../styles/portfoliopiece.module.scss";
 import Image from "next/image";
 import cssIcon from "../public/css.svg";
 import htmlIcon from "../public/html.svg";

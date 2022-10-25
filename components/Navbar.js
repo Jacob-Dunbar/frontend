@@ -1,4 +1,4 @@
-import styles from "../styles/navbar.module.css";
+import styles from "../styles/navbar.module.scss";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
