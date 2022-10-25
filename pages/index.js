@@ -4,9 +4,9 @@ import Navbar from "../components/Navbar.js";
 import Header from "../components/Header.js";
 import Contact from "../components/Contact";
 import ThreeHeader from "../components/ThreeHeader.js";
+import { useState } from "react";
 
-import { faMoon } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// strapi CMS
 
 const URL = process.env.STRAPIBASEURL;
 
@@ -49,11 +49,15 @@ export async function getStaticProps(context) {
 }
 
 export default function Home({ data }) {
-  console.log(data.portfoliopieces.data);
+  // dark mode state
+  const [darkMode, setDarkMode] = useState(true);
+
+  // generated portfolio pieces
 
   const portfolioElements = data.portfoliopieces.data.map((piece) => {
     return (
       <PortfolioPiece
+        darkMode={darkMode}
         key={piece.attributes.title}
         title={piece.attributes.title}
         description={piece.attributes.description}
@@ -65,6 +69,9 @@ export default function Home({ data }) {
     );
   });
 
+  //console log darkmode
+  console.log(darkMode);
+
   return (
     <div>
       <Head>
@@ -73,12 +80,15 @@ export default function Home({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar />
-      <ThreeHeader />
-      <Header />
+      <Navbar
+        darkMode={darkMode}
+        hi={() => setDarkMode((prevMode) => !prevMode)}
+      />
+      <ThreeHeader darkMode={darkMode} />
+      <Header darkMode={darkMode} />
 
       <section className="portfolioList">{portfolioElements}</section>
-      <Contact />
+      <Contact darkMode={darkMode} />
     </div>
   );
 }

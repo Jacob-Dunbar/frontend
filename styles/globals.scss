@@ -1,10 +1,5 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import "variables";
 
 a {
   color: inherit;
@@ -15,6 +10,7 @@ a {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  list-style-type: none;
 }
 
 .portfolioList {
@@ -27,4 +23,17 @@ a {
   align-items: center;
 
   gap: 30px;
+}
+
+.light {
+  .text {
+    color: $light-text;
+  }
+
+  .background {
+    background-color: $light-background;
+  }
+
+  %btn {
+  }
 }

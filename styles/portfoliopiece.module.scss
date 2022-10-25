@@ -1,4 +1,6 @@
-.portfolioCard {
+@import "variables";
+
+@mixin portfolio-card-base-style {
   border-radius: 10px;
   overflow: hidden;
 
@@ -9,6 +11,20 @@
   max-width: 800px;
 }
 
+.portfolioCard {
+  &_light {
+    @include portfolio-card-base-style();
+    color: $light-text;
+    background-color: $light-background2;
+  }
+
+  &_dark {
+    @include portfolio-card-base-style();
+    color: $dark-text;
+    background-color: $dark-background2;
+  }
+}
+
 .thumbnail {
   width: 30%;
   object-fit: cover;
@@ -17,13 +33,16 @@
 
 .stack {
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
   gap: 10px;
   margin-left: 10px;
   height: 50px;
-}
 
-.stackIcon {
-  width: 20px;
+  &_item {
+    width: 20px;
+    background-color: bisque;
+  }
 }
 
 .body {

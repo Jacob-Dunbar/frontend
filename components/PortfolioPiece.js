@@ -10,8 +10,6 @@ function PortfolioPiece(props) {
   const imageUrl = props.image.data[0].attributes.url;
   const techStack = props.techstack.tech;
 
-  console.log(techStack);
-
   const stackElements = techStack.map((item) => {
     if (item === "html") {
       return <Image src={htmlIcon} width="25" key={item} />;
@@ -25,9 +23,13 @@ function PortfolioPiece(props) {
       return <Image src={javascriptIcon} width="25" key={item} />;
     }
   });
-
+  console.log(props.darkMode);
   return (
-    <div className={styles.portfolioCard}>
+    <div
+      className={
+        props.darkMode ? styles.portfolioCard_dark : styles.portfolioCard_light
+      }
+    >
       <img className={styles.thumbnail} src={imageUrl} alt="thumbnail" />
       <div className={styles.body}>
         <h1>{props.title}</h1>

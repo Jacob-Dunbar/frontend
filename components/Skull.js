@@ -14,8 +14,6 @@ export default function Model({ ...props }) {
 
   // make light follow mouse
 
-  console.log(lightRef);
-
   const { viewport } = useThree();
 
   useFrame(({ mouse }) => {
