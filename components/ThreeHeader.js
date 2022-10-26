@@ -45,7 +45,7 @@ export default function ThreeHeader(props) {
         </Suspense>
       </Canvas>
 
-      <section className={css.text}>
+      <section className={props.darkMode ? css.text_dark : css.text_light}>
         <h1>Jacob Dunbar</h1>
         <h2>Web Developer</h2>
         <p>

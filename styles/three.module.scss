@@ -16,7 +16,7 @@
   z-index: 1;
 }
 
-.text {
+.text_light {
   position: absolute;
   bottom: 40px;
   width: 70%;
@@ -32,13 +32,14 @@
 
   h1 {
     font-family: $font-primary;
+    color: $light-text;
   }
 
   h2 {
     font-family: $font-secondary;
     font-weight: 600;
 
-    background-color: #eab03c;
+    background-color: $light-secondary;
     background-image: linear-gradient(to left, #ffd570 0%, #eab03c 100%);
     background-size: 100%;
     -webkit-background-clip: text;
@@ -48,6 +49,7 @@
 
   p {
     font-family: $font-secondary;
+    color: $light-text;
     font-weight: 400;
     text-align: center;
   }
@@ -77,5 +79,71 @@
     background-color: $light-background;
     color: $light-primary;
     border: 2px $light-primary solid;
+  }
+}
+
+.text_dark {
+  position: absolute;
+  bottom: 40px;
+  width: 70%;
+  left: 50%;
+  transform: translate(-50%);
+  // background-color: aqua;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+
+  h1 {
+    font-family: $font-primary;
+    color: $dark-text;
+  }
+
+  h2 {
+    font-family: $font-secondary;
+    font-weight: 600;
+
+    background-color: $dark-secondary;
+    background-image: linear-gradient(to left, #ffd570 0%, #eab03c 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  p {
+    font-family: $font-secondary;
+    color: $dark-text;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 18px;
+  }
+
+  button {
+    outline: none;
+    padding: 13px 17px;
+    border-radius: 10px;
+    border: none;
+    font-size: 0.9rem;
+    font-family: $font-secondary;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+
+  .emailbtn {
+    background-color: $dark-primary;
+    color: $dark-background;
+  }
+
+  .linkedinbtn {
+    background-color: $dark-background;
+    color: $dark-primary;
+    border: 2px $dark-primary solid;
   }
 }
