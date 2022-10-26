@@ -55,7 +55,7 @@ export default function Model({ ...props }) {
       />
       <animated.group
         rotation={[0, -89.55, 0]}
-        position={[0, 1.4, 0.01]}
+        position={[0, 1.6, 0.01]}
         scale={[0.1, 0.6, 0.16]}
       >
         <mesh

@@ -27,14 +27,14 @@ export default function Model({ ...props }) {
     <group ref={group} {...props} dispose={null}>
       <pointLight
         ref={lightRef}
-        distance={70}
-        decay={70}
-        intensity={0.4}
+        distance={20}
+        decay={2}
+        intensity={0.15}
         color={"#e0ffda"}
       />
       <Float speed={7} rotationIntensity={0.5} floatIntensity={0.5}>
         <group
-          position={[0.08, 1.6, 0]}
+          position={[0, 1.8, 0]}
           rotation={[-0.95, -1.565, 1.9]}
           scale={[-0.27, -0.28, -0.14]}
         >
