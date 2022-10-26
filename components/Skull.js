@@ -9,7 +9,7 @@ import { useFrame, useThree } from "react-three-fiber";
 
 export default function Model({ ...props }) {
   const group = useRef();
-  const { nodes, materials } = useGLTF("./skull.gltf");
+  const { nodes, materials } = useGLTF("/gltf_models/skull.gltf");
   const lightRef = useRef();
 
   // make light follow mouse

@@ -1,13 +1,12 @@
 import styles from "../styles/portfoliopiece.module.scss";
-import Image from "next/image";
 
 //techstack icons
 
-const cssIcon = "/css.svg";
-const htmlIcon = "/html.svg";
-const javascriptIcon = "/javascript.svg";
-const nextjsIcon = "/next.js.svg";
-const reactIcon = "/react.svg";
+const cssIcon = "/icons/css.svg";
+const htmlIcon = "/icons/html.svg";
+const javascriptIcon = "/icons/javascript.svg";
+const nextjsIcon = "/icons/next.js.svg";
+const reactIcon = "/icons/react.svg";
 
 function PortfolioPiece(props) {
   const imageUrl = props.image.data[0].attributes.url;

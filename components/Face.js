@@ -14,7 +14,7 @@ export default function Model({ ...props }) {
   //   scale: props.hovered ? [0.11, 0.88, 0.26] : [0.1, 0.85, 0.25],
   // });
   const group = useRef();
-  const { nodes, materials } = useGLTF("./face.gltf");
+  const { nodes, materials } = useGLTF("./gltf_models/face.gltf");
   const orbitControlsRef = useRef(null);
 
   // useFrame to slowly rotate face
