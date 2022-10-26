@@ -32,7 +32,7 @@ export default function Model({ ...props }) {
         intensity={0.15}
         color={"#e0ffda"}
       />
-      <Float speed={7} rotationIntensity={0.5} floatIntensity={0.5}>
+      <Float speed={6} rotationIntensity={0.5} floatIntensity={0.5}>
         <group
           position={[0, 2.2, 0]}
           rotation={[-0.95, -1.565, 1.9]}
