@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 @import "variables";
 
+@font-face {
+  font-family: Minecraft;
+  src: url(../public/Minecraft.ttf);
+}
+
 a {
   color: inherit;
   text-decoration: none;
