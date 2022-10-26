@@ -4,7 +4,7 @@
   border-radius: 10px;
   overflow: hidden;
 
-  box-shadow: 0px 5px 10px 0px #00000026;
+  box-shadow: 0px 10px 25px 0px #0000001a;
 
   display: flex;
 
@@ -22,13 +22,17 @@
   border: 2px $bordercol solid;
   color: $textcol;
   cursor: pointer;
+
+  &:hover {
+    scale: (1.03);
+  }
 }
 
 .portfolioCard {
   &_light {
     @include portfolio-card-base-style();
     color: $light-text;
-    background-color: $light-background2;
+    background-color: rgba($light-background2, 0.2);
   }
 
   &_dark {
@@ -48,9 +52,9 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 10px;
-  margin-top: -5px;
-  margin-left: 10px;
+  gap: 15px;
+  margin-top: -10px;
+
   height: 50px;
 
   &_item {
@@ -76,6 +80,7 @@
 }
 
 .buttons {
+  margin-top: auto;
   display: flex;
   gap: 15px;
 }
@@ -94,7 +99,7 @@
 }
 
 .btn_livesite_light {
-  @include btn($light-background, $light-primary, none);
+  @include btn($light-background2, $light-primary, none);
 }
 
 .btn_github_light {
