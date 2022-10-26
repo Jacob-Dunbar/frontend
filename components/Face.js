@@ -46,6 +46,9 @@ export default function Model({ ...props }) {
     <group ref={group} {...props} dispose={null}>
       <PerspectiveCamera makeDefault position={[0, 0, 7.5]} />
       <OrbitControls
+        enableZoom={false}
+        enablePan={false}
+        enableRotate={false}
         ref={orbitControlsRef}
         minPolarAngle={angleToRadians(50)}
         maxPolarAngle={angleToRadians(120)}
