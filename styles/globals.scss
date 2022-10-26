@@ -24,6 +24,14 @@ body {
   overflow-x: hidden;
 }
 
+.background_light {
+  background-color: $light-background;
+}
+
+.background_dark {
+  background-color: $dark-background;
+}
+
 .portfolioList {
   padding: 30px;
   width: 100vw;
@@ -39,10 +47,6 @@ body {
 .light {
   .text {
     color: $light-text;
-  }
-
-  .background {
-    background-color: $light-background;
   }
 
   %btn {
