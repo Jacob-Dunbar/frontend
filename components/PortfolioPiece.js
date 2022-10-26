@@ -6,7 +6,10 @@ const cssIcon = "/icons/css.svg";
 const htmlIcon = "/icons/html.svg";
 const javascriptIcon = "/icons/javascript.svg";
 const nextjsIcon = "/icons/next.js.svg";
-const reactIcon = "/icons/react.svg";
+const reactIcon = "/icons/react.png";
+const sassIcon = "/icons/sass.png";
+const tailwindIcon = "/icons/tailwind.png";
+const threejsIcon = "/icons/threejs.svg";
 
 function PortfolioPiece(props) {
   const imageUrl = props.image.data[0].attributes.url;
@@ -25,6 +28,14 @@ function PortfolioPiece(props) {
       return (
         <img src={javascriptIcon} key={item} className={styles.stack_item} />
       );
+    } else if (item === "sass") {
+      return <img src={sassIcon} key={item} className={styles.stack_item} />;
+    } else if (item === "tailwind") {
+      return (
+        <img src={tailwindIcon} key={item} className={styles.stack_item} />
+      );
+    } else if (item === "threejs") {
+      return <img src={threejsIcon} key={item} className={styles.stack_item} />;
     }
   });
 
