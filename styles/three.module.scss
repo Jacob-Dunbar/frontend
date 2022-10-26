@@ -14,7 +14,7 @@
 
 @mixin text-block() {
   position: absolute;
-  bottom: 130px;
+  bottom: 21vh;
   width: 70%;
   max-width: 500px;
   left: 50%;
@@ -105,7 +105,7 @@
 
 .buttons {
   position: absolute;
-  bottom: 60px;
+  bottom: 10vh;
 
   left: 50%;
   transform: translate(-50%);

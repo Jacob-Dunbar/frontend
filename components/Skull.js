@@ -34,9 +34,9 @@ export default function Model({ ...props }) {
       />
       <Float speed={7} rotationIntensity={0.5} floatIntensity={0.5}>
         <group
-          position={[0, 1.8, 0]}
+          position={[0, 2.2, 0]}
           rotation={[-0.95, -1.565, 1.9]}
-          scale={[-0.27, -0.28, -0.14]}
+          scale={[-0.27, -0.25, -0.12]}
         >
           <mesh
             geometry={nodes.Cube147.geometry}

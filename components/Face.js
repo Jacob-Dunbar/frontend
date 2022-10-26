@@ -51,12 +51,12 @@ export default function Model({ ...props }) {
         enableRotate={false}
         ref={orbitControlsRef}
         minPolarAngle={angleToRadians(50)}
-        maxPolarAngle={angleToRadians(120)}
+        maxPolarAngle={angleToRadians(110)}
       />
       <animated.group
         rotation={[0, -89.55, 0]}
-        position={[0, 1.6, 0.01]}
-        scale={[0.1, 0.6, 0.16]}
+        position={[0, 1.8, 0.01]}
+        scale={[0.1, 0.5, 0.15]}
       >
         <mesh
           geometry={nodes.Cube100.geometry}
