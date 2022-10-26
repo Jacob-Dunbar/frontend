@@ -13,6 +13,12 @@ a {
   list-style-type: none;
 }
 
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .portfolioList {
   padding: 30px;
   width: 100vw;
