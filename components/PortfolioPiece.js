@@ -1,10 +1,13 @@
 import styles from "../styles/portfoliopiece.module.scss";
 import Image from "next/image";
-import cssIcon from "../public/css.svg";
-import htmlIcon from "../public/html.svg";
-import javascriptIcon from "../public/javascript.svg";
-import nextjsIcon from "../public/next.js.svg";
-import reactIcon from "../public/react.svg";
+
+//techstack icons
+
+const cssIcon = "/css.svg";
+const htmlIcon = "/html.svg";
+const javascriptIcon = "/javascript.svg";
+const nextjsIcon = "/next.js.svg";
+const reactIcon = "/react.svg";
 
 function PortfolioPiece(props) {
   const imageUrl = props.image.data[0].attributes.url;
@@ -12,18 +15,20 @@ function PortfolioPiece(props) {
 
   const stackElements = techStack.map((item) => {
     if (item === "html") {
-      return <Image src={htmlIcon} width="25" key={item} />;
+      return <img src={htmlIcon} key={item} className={styles.stack_item} />;
     } else if (item === "css") {
-      return <Image src={cssIcon} width="25" key={item} />;
+      return <img src={cssIcon} key={item} className={styles.stack_item} />;
     } else if (item === "react") {
-      return <Image src={reactIcon} width="25" key={item} />;
+      return <img src={reactIcon} key={item} className={styles.stack_item} />;
     } else if (item === "next.js") {
-      return <Image src={nextjsIcon} width="25" key={item} />;
+      return <img src={nextjsIcon} key={item} className={styles.stack_item} />;
     } else if (item === "javascript") {
-      return <Image src={javascriptIcon} width="25" key={item} />;
+      return (
+        <img src={javascriptIcon} key={item} className={styles.stack_item} />
+      );
     }
   });
-  console.log(props.darkMode);
+
   return (
     <div
       className={
@@ -32,9 +37,40 @@ function PortfolioPiece(props) {
     >
       <img className={styles.thumbnail} src={imageUrl} alt="thumbnail" />
       <div className={styles.body}>
-        <h1>{props.title}</h1>
-        <p>{props.description}</p>
+        <h1>_{props.title}</h1>
+        {/* <p>{props.description}</p> */}
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dis
+          consectetur auctor purus at. Sit id sapien facilisis et, amet,
+          sollicitudin nec. Adipiscing commodo magna. sollicitudin nec.
+          Adipiscing commodo magna.
+        </p>
         <div className={styles.stack}>{stackElements}</div>
+        <div className={styles.buttons}>
+          <button
+            className={
+              props.darkMode
+                ? styles.btn_livesite_dark
+                : styles.btn_livesite_light
+            }
+          >
+            Live Site
+          </button>
+          <button
+            className={
+              props.darkMode ? styles.btn_github_dark : styles.btn_github_light
+            }
+          >
+            Githib Repo
+          </button>
+          <button
+            className={
+              props.darkMode ? styles.btn_figma_dark : styles.btn_figma_light
+            }
+          >
+            Figma Design
+          </button>
+        </div>
       </div>
     </div>
   );

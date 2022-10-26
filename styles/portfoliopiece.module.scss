@@ -11,6 +11,19 @@
   max-width: 800px;
 }
 
+@mixin btn($textcol, $bgcol, $bordercol) {
+  padding: 10px 16px;
+  outline: none;
+  border-radius: 10px;
+  border: none;
+  font-family: $font-secondary;
+  font-weight: 600;
+  background-color: $bgcol;
+  border: 2px $bordercol solid;
+  color: $textcol;
+  cursor: pointer;
+}
+
 .portfolioCard {
   &_light {
     @include portfolio-card-base-style();
@@ -21,14 +34,14 @@
   &_dark {
     @include portfolio-card-base-style();
     color: $dark-text;
-    background-color: $dark-background2;
+    background-color: rgba($dark-background2, 0.5);
   }
 }
 
 .thumbnail {
-  width: 30%;
-  object-fit: cover;
-  object-position: left;
+  width: 35%;
+  object-fit: fill;
+  object-position: top;
 }
 
 .stack {
@@ -36,19 +49,59 @@
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
+  margin-top: -5px;
   margin-left: 10px;
   height: 50px;
 
   &_item {
-    width: 20px;
-    background-color: bisque;
+    width: 25px;
   }
 }
 
 .body {
-  padding: 15px;
+  padding: 25px;
 
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
+
+  h1 {
+    font-family: $font-primary;
+  }
+
+  p {
+    font-family: $font-secondary;
+    font-size: 0.9rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn_livesite_dark {
+  @include btn($dark-background, $dark-primary, none);
+}
+
+.btn_github_dark {
+  @include btn($dark-primary, transparent, $dark-primary);
+}
+
+.btn_figma_dark {
+  margin-left: auto;
+  @include btn($dark-primary, transparent, none);
+}
+
+.btn_livesite_light {
+  @include btn($light-background, $light-primary, none);
+}
+
+.btn_github_light {
+  @include btn($light-primary, transparent, $light-primary);
+}
+
+.btn_figma_light {
+  margin-left: auto;
+  @include btn($light-primary, transparent, none);
 }

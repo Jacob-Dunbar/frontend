@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar.js";
 import Contact from "../components/Contact";
 import ThreeHeader from "../components/ThreeHeader.js";
 import { useState } from "react";
+import Portfolio from "../components/Portfolio.js";
 
 // strapi CMS
 
@@ -53,20 +54,20 @@ export default function Home({ data }) {
 
   // generated portfolio pieces
 
-  const portfolioElements = data.portfoliopieces.data.map((piece) => {
-    return (
-      <PortfolioPiece
-        darkMode={darkMode}
-        key={piece.attributes.title}
-        title={piece.attributes.title}
-        description={piece.attributes.description}
-        techstack={piece.attributes.techstack}
-        livesite={piece.attributes.livesite}
-        repo={piece.attributes.repo}
-        image={piece.attributes.image}
-      />
-    );
-  });
+  // const portfolioElements = data.portfoliopieces.data.map((piece) => {
+  //   return (
+  //     <PortfolioPiece
+  //       darkMode={darkMode}
+  //       key={piece.attributes.title}
+  //       title={piece.attributes.title}
+  //       description={piece.attributes.description}
+  //       techstack={piece.attributes.techstack}
+  //       livesite={piece.attributes.livesite}
+  //       repo={piece.attributes.repo}
+  //       image={piece.attributes.image}
+  //     />
+  //   );
+  // });
 
   //console log darkmode
   console.log(darkMode);
@@ -83,9 +84,12 @@ export default function Home({ data }) {
         darkMode={darkMode}
         toggleDarkMode={() => setDarkMode((prevMode) => !prevMode)}
       />
+
       <ThreeHeader darkMode={darkMode} />
 
-      <section className="portfolioList">{portfolioElements}</section>
+      <Portfolio darkMode={darkMode} data={data} />
+
+      {/* <section className="portfolioList">{portfolioElements}</section> */}
       <Contact darkMode={darkMode} />
     </div>
   );

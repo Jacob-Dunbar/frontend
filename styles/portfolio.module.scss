@@ -1,0 +1,24 @@
+@import "variables";
+
+@mixin heading($color) {
+  color: $color;
+  font-family: $font-primary;
+  font-size: 2rem;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.heading_light {
+  @include heading($light-text);
+}
+
+.heading_dark {
+  @include heading($dark-text);
+}
