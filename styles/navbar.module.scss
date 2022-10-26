@@ -10,7 +10,12 @@
   max-width: 1100px;
   margin: auto;
 
+  h1 {
+    font-family: $font-primary;
+  }
+
   ul {
+    font-family: $font-primary;
     display: flex;
     gap: 20px;
   }

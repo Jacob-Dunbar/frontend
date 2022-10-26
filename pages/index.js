@@ -82,7 +82,7 @@ export default function Home({ data }) {
 
       <Navbar
         darkMode={darkMode}
-        hi={() => setDarkMode((prevMode) => !prevMode)}
+        toggleDarkMode={() => setDarkMode((prevMode) => !prevMode)}
       />
       <ThreeHeader darkMode={darkMode} />
       <Header darkMode={darkMode} />
