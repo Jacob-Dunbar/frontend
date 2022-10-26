@@ -14,7 +14,6 @@ export default function ThreeHeader(props) {
   return (
     <div className={css.canvas}>
       {/* light mode face vvv */}
-
       <Canvas className={!props.darkMode ? css.show : css.hidden}>
         <Suspense fallback={null}>
           <ambientLight intensity={0.4} />
@@ -32,7 +31,7 @@ export default function ThreeHeader(props) {
             onPointerOver={() => setHovered(true)}
             onPointerOut={() => setHovered(false)}
             onClick={() => setActive(!active)}
-            // scale={hovered ? [1.1, 1.1, 1.1] : [1, 1, 1]}
+            scale={[0.5, 0.5, 0.5]}
             hovered={hovered}
             active={active}
           />
@@ -40,12 +39,30 @@ export default function ThreeHeader(props) {
       </Canvas>
 
       {/* dark mode skull vvv */}
-
       <Canvas className={props.darkMode ? css.show : css.hidden}>
         <Suspense fallback={null}>
           <Skull />
         </Suspense>
       </Canvas>
+
+      <section className={css.text}>
+        <h1>Jacob Dunbar</h1>
+        <h2>Web Developer</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus,
+          curabitur ornare etiam scelerisque fames mauris donec rhoncus. Erat
+          lectus est nisl eget tellus egestas enim massa. Morbi amet sit
+          pretium, sit.
+        </p>
+        <p>
+          Tellus, curabitur ornare etiam scelerisque fames mauris donec rhoncus.
+          Erat lectus est nisl eget tellus egestas enim{" "}
+        </p>
+        <div className={css.buttons}>
+          <button className={css.emailbtn}>Email Me</button>
+          <button className={css.linkedinbtn}>LinkedIn</button>
+        </div>
+      </section>
     </div>
   );
 }

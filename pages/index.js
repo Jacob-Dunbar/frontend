@@ -1,7 +1,6 @@
 import Head from "next/head";
 import PortfolioPiece from "../components/PortfolioPiece.js";
 import Navbar from "../components/Navbar.js";
-import Header from "../components/Header.js";
 import Contact from "../components/Contact";
 import ThreeHeader from "../components/ThreeHeader.js";
 import { useState } from "react";
@@ -85,7 +84,6 @@ export default function Home({ data }) {
         toggleDarkMode={() => setDarkMode((prevMode) => !prevMode)}
       />
       <ThreeHeader darkMode={darkMode} />
-      <Header darkMode={darkMode} />
 
       <section className="portfolioList">{portfolioElements}</section>
       <Contact darkMode={darkMode} />

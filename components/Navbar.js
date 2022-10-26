@@ -3,7 +3,7 @@ import styles from "../styles/navbar.module.scss";
 function Navbar(props) {
   return (
     <nav className={props.darkMode ? styles.navbar_dark : styles.navbar_light}>
-      <h1>Jacob Dunbar</h1>
+      <h1>JacobDunbar_</h1>
       <ul>
         <li onClick={props.toggleDarkMode}>
           <img

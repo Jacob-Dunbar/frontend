@@ -1,5 +1,10 @@
+@import "variables";
+
 .canvas {
   height: 600px;
+  position: relative;
+
+  height: 90vh;
 }
 
 .hidden {
@@ -8,4 +13,69 @@
 
 .show {
   display: block;
+  z-index: 1;
+}
+
+.text {
+  position: absolute;
+  bottom: 40px;
+  width: 70%;
+  left: 50%;
+  transform: translate(-50%);
+  // background-color: aqua;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+
+  h1 {
+    font-family: $font-primary;
+  }
+
+  h2 {
+    font-family: $font-secondary;
+    font-weight: 600;
+
+    background-color: #eab03c;
+    background-image: linear-gradient(to left, #ffd570 0%, #eab03c 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  p {
+    font-family: $font-secondary;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 18px;
+  }
+
+  button {
+    outline: none;
+    padding: 13px 17px;
+    border-radius: 10px;
+    border: none;
+    font-size: 0.9rem;
+    font-family: $font-secondary;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+
+  .emailbtn {
+    background-color: $light-primary;
+    color: $light-background;
+  }
+
+  .linkedinbtn {
+    background-color: $light-background;
+    color: $light-primary;
+    border: 2px $light-primary solid;
+  }
 }

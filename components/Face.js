@@ -10,9 +10,9 @@ import { useFrame } from "react-three-fiber";
 import { angleToRadians } from "./angle";
 
 export default function Model({ ...props }) {
-  const spring = useSpring({
-    scale: props.hovered ? [0.11, 0.88, 0.26] : [0.1, 0.85, 0.25],
-  });
+  // const spring = useSpring({
+  //   scale: props.hovered ? [0.11, 0.88, 0.26] : [0.1, 0.85, 0.25],
+  // });
   const group = useRef();
   const { nodes, materials } = useGLTF("./face.gltf");
   const orbitControlsRef = useRef(null);
@@ -55,8 +55,8 @@ export default function Model({ ...props }) {
       />
       <animated.group
         rotation={[0, -89.55, 0]}
-        position={[0, 0.8, 0.01]}
-        scale={spring.scale}
+        position={[0, 1.4, 0.01]}
+        scale={[0.1, 0.6, 0.16]}
       >
         <mesh
           geometry={nodes.Cube100.geometry}
