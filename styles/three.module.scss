@@ -14,8 +14,9 @@
 
 @mixin text-block() {
   position: absolute;
-  bottom: 100px;
+  bottom: 130px;
   width: 70%;
+  max-width: 500px;
   left: 50%;
   transform: translate(-50%);
 
@@ -89,7 +90,7 @@
   }
 
   h2 {
-    @include gradient-heading((lighten($dark-secondary, 20%)), $dark-secondary);
+    @include gradient-heading((darken($dark-primary, 20%)), $dark-primary);
   }
 
   p {
@@ -103,8 +104,16 @@
 //buttons
 
 .buttons {
+  position: absolute;
+  bottom: 60px;
+
+  left: 50%;
+  transform: translate(-50%);
   display: flex;
   gap: 18px;
+  z-index: 2;
+
+  cursor: pointer;
 }
 
 // buttons light mode
@@ -113,6 +122,11 @@
   @include button;
   background-color: $light-primary;
   color: $light-background;
+
+  &:hover {
+    background-color: darken($light-primary, 15%);
+    scale: (1.03);
+  }
 }
 
 .linkedinbtn_light {
@@ -120,6 +134,12 @@
   background-color: $light-background;
   color: $light-primary;
   border: 2px $light-primary solid;
+
+  &:hover {
+    color: darken($light-primary, 15%);
+    border: 2px darken($light-primary, 15%) solid;
+    scale: (1.03);
+  }
 }
 
 //buttons dark
@@ -128,6 +148,11 @@
   @include button;
   background-color: $dark-primary;
   color: $dark-background;
+
+  &:hover {
+    background-color: darken($dark-primary, 15%);
+    scale: (1.03);
+  }
 }
 
 .linkedinbtn_dark {
@@ -135,4 +160,10 @@
   background-color: $dark-background;
   color: $dark-primary;
   border: 2px $dark-primary solid;
+
+  &:hover {
+    color: darken($dark-primary, 15%);
+    border: 2px darken($dark-primary, 15%) solid;
+    scale: (1.03);
+  }
 }
