@@ -5,10 +5,15 @@ function Navbar(props) {
     <nav className={props.darkMode ? styles.navbar_dark : styles.navbar_light}>
       <h1>Jacob Dunbar</h1>
       <ul>
-        <li></li>
-        <li>Work</li>
-
-        <li>Contact</li>
+        <li onClick={props.toggleDarkMode}>
+          <img
+            src={props.darkMode ? "/sun.svg" : "/moon.svg"}
+            alt="darkmode toggle"
+            className={props.darkMode ? styles.sun : styles.moon}
+          />
+        </li>
+        <li>Portfolio &gt;</li>
+        <li>Contact &gt;</li>
       </ul>
     </nav>
   );
