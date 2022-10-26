@@ -7,7 +7,7 @@ import css from "../styles/three.module.scss";
 import Skull from "../components/Skull.js";
 import { useSpring, animated } from "@react-spring/three";
 
-export default function ThreeHeader() {
+export default function ThreeHeader(props) {
   const [hovered, setHovered] = useState(false);
   const [active, setActive] = useState(false);
 
@@ -15,7 +15,7 @@ export default function ThreeHeader() {
     <div className={css.canvas}>
       {/* light mode face vvv */}
 
-      {/* <Canvas>
+      <Canvas className={!props.darkMode ? css.show : css.hidden}>
         <Suspense fallback={null}>
           <ambientLight intensity={0.4} />
 
@@ -37,11 +37,11 @@ export default function ThreeHeader() {
             active={active}
           />
         </Suspense>
-      </Canvas> */}
+      </Canvas>
 
       {/* dark mode skull vvv */}
 
-      <Canvas>
+      <Canvas className={props.darkMode ? css.show : css.hidden}>
         <Suspense fallback={null}>
           <Skull />
         </Suspense>
