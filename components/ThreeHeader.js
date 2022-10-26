@@ -12,7 +12,7 @@ export default function ThreeHeader(props) {
   const [active, setActive] = useState(false);
 
   return (
-    <div className={css.canvas}>
+    <div className={css.home}>
       {/* light mode face vvv */}
       <Canvas className={!props.darkMode ? css.show : css.hidden}>
         <Suspense fallback={null}>
@@ -58,11 +58,21 @@ export default function ThreeHeader(props) {
           Tellus, curabitur ornare etiam scelerisque fames mauris donec rhoncus.
           Erat lectus est nisl eget tellus egestas enim{" "}
         </p>
-        <div className={css.buttons}>
-          <button className={css.emailbtn}>Email Me</button>
-          <button className={css.linkedinbtn}>LinkedIn</button>
-        </div>
       </section>
+      <div className={css.buttons}>
+        <button
+          className={props.darkMode ? css.emailbtn_dark : css.emailbtn_light}
+        >
+          Email Me
+        </button>
+        <button
+          className={
+            props.darkMode ? css.linkedinbtn_dark : css.linkedinbtn_light
+          }
+        >
+          LinkedIn
+        </button>
+      </div>
     </div>
   );
 }
