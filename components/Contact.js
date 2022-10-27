@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import css from "../styles/contact.module.scss";
 
 function Contact(props) {
@@ -14,31 +14,48 @@ function Contact(props) {
   const [messageVal, setMessageVal] = useState(true);
   const [emailVal, setEmailVal] = useState(true);
 
+  //button active state
+  const [buttonActive, setButtonActive] = useState(false);
+
+  //sent state
+  const [sent, setSent] = useState(false);
+
+  //activate send button
+  useEffect(() => {
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.message ||
+      !nameVal ||
+      !emailVal ||
+      !messageVal ||
+      !formData.email.includes("@")
+    ) {
+      setButtonActive(false);
+    } else {
+      setButtonActive(true);
+    }
+  }, [formData]);
+
   // handle submit - check fields are not empty and that corresponding state is true
   // if any empty fields set corresponding state to false
   // if all good post to mail api
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (!formData.name || !nameVal) {
-      setNameVal(false);
-    } else if (!formData.email || !emailVal) {
-      setEmailVal(false);
-    } else if (!formData.message || !messageVal) {
-      setMessageVal(false);
-    } else if (
-      formData.name &&
-      formData.email &&
-      formData.message &&
-      nameVal &&
-      emailVal &&
-      messageVal
-    ) {
+    if (buttonActive) {
       fetch("/api/mail", {
         method: "post",
         body: JSON.stringify(formData),
       });
-      console.log("sent");
+      setSent(true);
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } else {
+      return;
     }
   }
 
@@ -52,12 +69,20 @@ function Contact(props) {
         [event.target.name]: event.target.value,
       };
     });
+
+    //reset sent state
+
+    setSent(false);
+
     // set validation state to true if value truthy.
     if (event.target.name === "name" && event.target.value) {
       setNameVal(true);
     } else if (event.target.name === "message" && event.target.value) {
       setMessageVal(true);
-    } else if (event.target.name == "email" && event.target.value) {
+    } else if (
+      event.target.name == "email" &&
+      event.target.value.includes("@")
+    ) {
       setEmailVal(true);
     }
   }
@@ -97,6 +122,7 @@ function Contact(props) {
         className={props.darkMode ? css.form_dark : css.form_light}
         method="post"
         onSubmit={handleSubmit}
+        noValidate
       >
         <p>
           <label htmlFor="name">Name</label>
@@ -136,7 +162,9 @@ function Contact(props) {
         </p>
         <p className={css.err_text}>{!messageVal && "Don't be shy!"}</p>
         <p className={css.button_container}>
-          <button>Send Message</button>
+          <button className={!buttonActive ? css.inactive : undefined}>
+            {sent ? "Message successfully sent!" : "Send Message"}
+          </button>
         </p>
       </form>
     </div>

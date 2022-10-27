@@ -104,3 +104,7 @@
   font-weight: 600;
   margin-top: -15px;
 }
+
+.inactive {
+  background-color: rgba($inactive, 0.5) !important;
+}
