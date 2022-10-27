@@ -2,7 +2,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 
 import { Suspense, useRef, useState } from "react";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
-import Face from "./Face.js";
+import Face from "./Face2.js";
 import css from "../styles/three.module.scss";
 import Skull from "../components/Skull.js";
 import { useSpring, animated } from "@react-spring/three";

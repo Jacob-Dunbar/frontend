@@ -51,7 +51,7 @@ export async function getStaticProps(context) {
 
 export default function Home({ data }) {
   // dark mode state
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   //useRefs for navigation
   const portfolioSection = useRef(null);
