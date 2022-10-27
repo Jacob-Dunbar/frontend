@@ -15,8 +15,12 @@ function Navbar(props) {
             className={props.darkMode ? styles.sun : styles.moon}
           />
         </li>
-        <li>Portfolio &gt;</li>
-        <li>Contact &gt;</li>
+        <li onClick={() => props.scrollToSection(props.portfolioSection)}>
+          Portfolio &gt;
+        </li>
+        <li onClick={() => props.scrollToSection(props.contactSection)}>
+          Contact &gt;
+        </li>
       </ul>
     </nav>
   );

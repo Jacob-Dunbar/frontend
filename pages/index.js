@@ -1,10 +1,11 @@
 import Head from "next/head";
-import PortfolioPiece from "../components/PortfolioPiece.js";
+
 import Navbar from "../components/Navbar.js";
 import Contact from "../components/Contact";
 import ThreeHeader from "../components/ThreeHeader.js";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Portfolio from "../components/Portfolio.js";
+import ScrollToTop from "../components/ScrollToTop.js";
 
 // strapi CMS
 
@@ -52,26 +53,16 @@ export default function Home({ data }) {
   // dark mode state
   const [darkMode, setDarkMode] = useState(true);
 
-  // generated portfolio pieces
+  //useRefs for navigation
+  const portfolioSection = useRef(null);
+  const contactSection = useRef(null);
 
-  // const portfolioElements = data.portfoliopieces.data.map((piece) => {
-  //   return (
-  //     <PortfolioPiece
-  //       darkMode={darkMode}
-  //       key={piece.attributes.title}
-  //       title={piece.attributes.title}
-  //       description={piece.attributes.description}
-  //       techstack={piece.attributes.techstack}
-  //       livesite={piece.attributes.livesite}
-  //       repo={piece.attributes.repo}
-  //       image={piece.attributes.image}
-  //     />
-  //   );
-  // });
-
-  //console log darkmode
-  console.log(darkMode);
-
+  function scrollToSection(elementRef) {
+    window.scrollTo({
+      top: elementRef.current.offsetTop,
+      behavior: "smooth",
+    });
+  }
   return (
     <div className={darkMode ? "background_dark" : "background_light"}>
       <Head>
@@ -80,16 +71,21 @@ export default function Home({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <ScrollToTop darkMode={darkMode} />
+
       <Navbar
         darkMode={darkMode}
         toggleDarkMode={() => setDarkMode((prevMode) => !prevMode)}
+        scrollToSection={scrollToSection}
+        portfolioSection={portfolioSection}
+        contactSection={contactSection}
       />
 
       <ThreeHeader darkMode={darkMode} />
-
+      <div ref={portfolioSection}></div>
       <Portfolio darkMode={darkMode} data={data} />
 
-      {/* <section className="portfolioList">{portfolioElements}</section> */}
+      <div ref={contactSection}></div>
       <Contact darkMode={darkMode} />
     </div>
   );
