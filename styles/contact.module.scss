@@ -89,3 +89,18 @@
 .form_dark {
   @include form($dark-primary, $dark-background2, $dark-background);
 }
+
+.field_err {
+  border: 2px $error solid !important;
+}
+
+.field_ok {
+}
+
+.err_text {
+  color: $error;
+  font-size: 0.8rem;
+  font-family: $font-secondary;
+  font-weight: 600;
+  margin-top: -15px;
+}
