@@ -92,4 +92,4 @@ export default function Model({ ...props }) {
   );
 }
 
-useGLTF.preload("/face.gltf");
+useGLTF.preload("/gltf_models/face.gltf");

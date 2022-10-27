@@ -61,4 +61,4 @@ export default function Model({ ...props }) {
   );
 }
 
-useGLTF.preload("/skull.gltf");
+useGLTF.preload("/gltf_models/skull.gltf");
