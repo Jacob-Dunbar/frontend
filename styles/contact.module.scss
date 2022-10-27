@@ -1,0 +1,91 @@
+@import "variables";
+
+.form_container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  .heading_light {
+    font-family: $font-primary;
+    color: $light-text;
+    margin-block: 10vh 5vh;
+  }
+  .heading_dark {
+    font-family: $font-primary;
+    color: $dark-text;
+    margin-block: 10vh 5vh;
+  }
+}
+
+@mixin form($bordercol, $bgcol, $textcol) {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 90%;
+  max-width: 400px;
+  font-family: $font-secondary;
+
+  p {
+    label {
+      font-size: 0.9rem;
+      color: $bordercol;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      margin-top: 10px;
+      padding-left: 10px;
+      border-radius: 8px;
+      height: 6vh;
+      background-color: rgba($bgcol, 0.5);
+      outline: none;
+      border: none;
+      border: 2px rgba($bordercol, 0.2) solid;
+      box-shadow: 0px 10px 25px 0px #0000001a;
+
+      &:focus {
+        border: 2px $bordercol solid;
+      }
+    }
+
+    textarea {
+      display: block;
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      height: 16vh;
+      background-color: rgba($bgcol, 0.5);
+      border: none;
+      outline: none;
+      border: 2px rgba($bordercol, 0.2) solid;
+      box-shadow: 0px 10px 25px 0px #0000001a;
+
+      &:focus {
+        border: 2px $bordercol solid;
+      }
+    }
+  }
+  .button_container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    button {
+      @include button($bordercol, $textcol, none);
+    }
+  }
+}
+
+.form_light {
+  @include form($light-primary, $light-background2, $light-background);
+}
+
+.form_dark {
+  @include form($dark-primary, $dark-background2, $dark-background);
+}

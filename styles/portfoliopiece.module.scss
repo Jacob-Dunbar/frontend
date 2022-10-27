@@ -11,23 +11,6 @@
   max-width: 800px;
 }
 
-@mixin btn($textcol, $bgcol, $bordercol) {
-  padding: 10px 16px;
-  outline: none;
-  border-radius: 10px;
-  border: none;
-  font-family: $font-secondary;
-  font-weight: 600;
-  background-color: $bgcol;
-  border: 2px $bordercol solid;
-  color: $textcol;
-  cursor: pointer;
-
-  &:hover {
-    scale: (1.03);
-  }
-}
-
 .portfolioCard {
   &_light {
     @include portfolio-card-base-style();
@@ -89,27 +72,27 @@
 }
 
 .btn_livesite_dark {
-  @include btn($dark-background, $dark-primary, none);
+  @include button($dark-primary, $dark-background, none);
 }
 
 .btn_github_dark {
-  @include btn($dark-primary, transparent, $dark-primary);
+  @include button(transparent, $dark-primary, $dark-primary);
 }
 
 .btn_figma_dark {
   margin-left: auto;
-  @include btn($dark-primary, transparent, none);
+  @include button(transparent, $dark-primary, none);
 }
 
 .btn_livesite_light {
-  @include btn($light-background2, $light-primary, none);
+  @include button($light-primary, $light-background, none);
 }
 
 .btn_github_light {
-  @include btn($light-primary, transparent, $light-primary);
+  @include button(transparent, $light-primary, $light-primary);
 }
 
 .btn_figma_light {
   margin-left: auto;
-  @include btn($light-primary, transparent, none);
+  @include button(transparent, $light-primary, none);
 }

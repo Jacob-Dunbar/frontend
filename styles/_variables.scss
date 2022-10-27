@@ -11,4 +11,23 @@ $dark-primary: #4fb286;
 $dark-secondary: #4f1f57;
 
 $font-primary: Minecraft;
-$font-secondary: "Inter", sans-serif; ;
+$font-secondary: "Inter", sans-serif;
+
+@mixin button($bgcol, $textcol, $bordercol) {
+  outline: none;
+  padding: 13px 17px;
+  border-radius: 10px;
+  border: none;
+  font-size: 0.9rem;
+  font-family: $font-secondary;
+  font-weight: 600;
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: $bgcol;
+  color: $textcol;
+  border: 2px $bordercol solid;
+
+  &:hover {
+    scale: (1.03);
+  }
+}

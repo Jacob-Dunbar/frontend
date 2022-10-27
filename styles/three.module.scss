@@ -111,25 +111,6 @@
 
 // buttons light mode
 
-@mixin button($bgcol, $textcol, $bordercol) {
-  outline: none;
-  padding: 13px 17px;
-  border-radius: 10px;
-  border: none;
-  font-size: 0.9rem;
-  font-family: $font-secondary;
-  font-weight: 600;
-  margin-top: 10px;
-  cursor: pointer;
-  background-color: $bgcol;
-  color: $textcol;
-  border: 2px $bordercol solid;
-
-  &:hover {
-    scale: (1.03);
-  }
-}
-
 .emailbtn_light {
   @include button($light-primary, $light-background, none);
 }

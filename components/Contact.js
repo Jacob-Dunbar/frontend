@@ -1,6 +1,7 @@
 import React from "react";
+import css from "../styles/contact.module.scss";
 
-function Contact() {
+function Contact(props) {
   async function handleSubmit(e) {
     e.preventDefault();
     const formData = {};
@@ -22,23 +23,32 @@ function Contact() {
   }
 
   return (
-    <form method="post" onSubmit={handleSubmit}>
-      <p>
-        <label htmlFor="name">Name</label>
-        <input type="text" name="name" />
-      </p>
-      <p>
-        <label htmlFor="email">Email</label>
-        <input type="email" name="email" />
-      </p>
-      <p>
-        <label htmlFor="message">Message</label>
-        <textarea name="message" />
-      </p>
-      <p>
-        <button>Submit</button>
-      </p>
-    </form>
+    <div className={css.form_container}>
+      <h1 className={props.darkMode ? css.heading_dark : css.heading_light}>
+        Contact
+      </h1>
+      <form
+        className={props.darkMode ? css.form_dark : css.form_light}
+        method="post"
+        onSubmit={handleSubmit}
+      >
+        <p>
+          <label htmlFor="name">Name</label>
+          <input type="text" name="name" />
+        </p>
+        <p>
+          <label htmlFor="email">Email</label>
+          <input type="email" name="email" />
+        </p>
+        <p>
+          <label htmlFor="message">Message</label>
+          <textarea name="message" />
+        </p>
+        <p className={css.button_container}>
+          <button>Send Message</button>
+        </p>
+      </form>
+    </div>
   );
 }
 
