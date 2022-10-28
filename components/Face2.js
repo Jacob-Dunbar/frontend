@@ -39,7 +39,7 @@ export default function Model({ ...props }) {
       <group
         rotation={[0, -89.55, 0]}
         position={[0, 1.5, 0.01]}
-        scale={[0.1, 0.1, 0.023]}
+        scale={[0.1, 0.1, 0.022]}
       >
         <mesh
           geometry={nodes.Cube009.geometry}

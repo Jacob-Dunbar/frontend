@@ -1,4 +1,6 @@
-// colours
+// Colours
+
+// Light mode
 
 $light-text: #1f2023;
 $light-background: #f1f4ef;
@@ -6,19 +8,25 @@ $light-background2: #fdfffc;
 $light-primary: #2191fb;
 $light-secondary: #f75f1e;
 
+// Dark mode
+
 $dark-text: #fdfffc;
 $dark-background: #0d1017;
 $dark-background2: #2f3134;
 $dark-primary: #4fb286;
 $dark-secondary: #4f1f57;
 
+// Misc
+
 $error: #f46565;
 $inactive: grey;
+
+// Fonts
 
 $font-primary: Minecraft;
 $font-secondary: "Inter", sans-serif;
 
-//buttons
+// Buttons
 
 @mixin button($bgcol, $textcol, $bordercol) {
   outline: none;
@@ -33,6 +41,9 @@ $font-secondary: "Inter", sans-serif;
   background-color: $bgcol;
   color: $textcol;
   border: 2px $bordercol solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     scale: (1.03);

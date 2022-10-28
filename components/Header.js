@@ -27,10 +27,10 @@ export default function ThreeHeader(props) {
           <ambientLight intensity={0.4} />
 
           <spotLight
-            intensity={0.6}
+            intensity={0.7}
             angle={0.9}
             penumbra={1}
-            position={[10, 50, 160]}
+            position={[10, 80, 160]}
             castShadow
             color={"#FFFFFF"}
           />
@@ -68,6 +68,13 @@ export default function ThreeHeader(props) {
           className={props.darkMode ? css.emailbtn_dark : css.emailbtn_light}
         >
           Email Me
+          <img
+            className={css.mail_icon}
+            src={
+              props.darkMode ? "/icons/mail_dark.svg" : "/icons/mail_light.svg"
+            }
+            alt=""
+          />
         </button>
         <button
           className={
@@ -75,6 +82,15 @@ export default function ThreeHeader(props) {
           }
         >
           LinkedIn
+          <img
+            className={css.linkedin_icon}
+            src={
+              props.darkMode
+                ? "/icons/linkedin_dark.svg"
+                : "/icons/linkedin_light.svg"
+            }
+            alt=""
+          />
         </button>
       </div>
     </div>
