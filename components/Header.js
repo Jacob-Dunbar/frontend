@@ -65,6 +65,7 @@ export default function ThreeHeader(props) {
       </section>
       <div className={css.buttons}>
         <button
+          onClick={() => props.scrollToSection(props.contactSection)}
           className={props.darkMode ? css.emailbtn_dark : css.emailbtn_light}
         >
           Email Me
@@ -81,7 +82,9 @@ export default function ThreeHeader(props) {
             props.darkMode ? css.linkedinbtn_dark : css.linkedinbtn_light
           }
         >
-          LinkedIn
+          <a href="https://uk.linkedin.com/in/jacobdunbar111?trk=people-guest_people_search-card">
+            LinkedIn
+          </a>
           <img
             className={css.linkedin_icon}
             src={
