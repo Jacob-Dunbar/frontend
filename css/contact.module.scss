@@ -1,9 +1,10 @@
 @import "variables";
 
 .form_container {
+  margin-top: 150px;
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -12,12 +13,12 @@
   .heading_light {
     font-family: $font-primary;
     color: $light-text;
-    margin-block: 10vh 5vh;
+    margin-bottom: 10vh;
   }
   .heading_dark {
     font-family: $font-primary;
     color: $dark-text;
-    margin-block: 10vh 5vh;
+    margin-bottom: 10vh;
   }
 }
 

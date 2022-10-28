@@ -1,8 +1,9 @@
-import React from "react";
 import css from "../styles/portfolio.module.scss";
 import PortfolioPiece from "./PortfolioPiece.js";
 
 function Portfolio(props) {
+  // Create array of portfolio peice components by mapping over strapi data.
+
   const portfolioElements = props.data.portfoliopieces.data.map((piece) => {
     return (
       <PortfolioPiece

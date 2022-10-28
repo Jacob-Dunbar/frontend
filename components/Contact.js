@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import css from "../styles/contact.module.scss";
+import styles from "../styles/contact.module.scss";
 
 function Contact(props) {
   //form data object
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -10,17 +11,21 @@ function Contact(props) {
   });
 
   //field validation states
+
   const [nameVal, setNameVal] = useState(true);
   const [messageVal, setMessageVal] = useState(true);
   const [emailVal, setEmailVal] = useState(true);
 
-  //button active state
+  //send button active state
+
   const [buttonActive, setButtonActive] = useState(false);
 
-  //sent state
+  //message sent state
+
   const [sent, setSent] = useState(false);
 
-  //activate send button
+  //activate send button when all fields are filled and validated
+
   useEffect(() => {
     if (
       !formData.name ||
@@ -40,6 +45,7 @@ function Contact(props) {
   // handle submit - check fields are not empty and that corresponding state is true
   // if any empty fields set corresponding state to false
   // if all good post to mail api
+
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -62,6 +68,7 @@ function Contact(props) {
   //handle change
   //spread prev formData and over write current target data
   //use [] to allow dynamic string to be used as key
+
   function handleChange(event) {
     setFormData((prevFormData) => {
       return {
@@ -75,6 +82,7 @@ function Contact(props) {
     setSent(false);
 
     // set validation state to true if value truthy.
+
     if (event.target.name === "name" && event.target.value) {
       setNameVal(true);
     } else if (event.target.name === "message" && event.target.value) {
@@ -87,7 +95,8 @@ function Contact(props) {
     }
   }
 
-  //check field functions - all fields for contents and check email for @
+  //check field functions - all fields for contents and check email for "@"
+
   function checkNameField(event) {
     if (!event.target.value) {
       setNameVal(false);
@@ -113,6 +122,7 @@ function Contact(props) {
   }
 
   //remember to control inputs so formData state drives the input state and they stay insync. value={formData.input}
+
   return (
     <div className={css.form_container}>
       {/* contact section */}
@@ -170,6 +180,7 @@ function Contact(props) {
       </form>
 
       {/* foreground blobs */}
+
       <div className={css.floater_container}>
         <div
           className={props.darkMode ? css.floater1_dark : css.floater1_light}

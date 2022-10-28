@@ -1,5 +1,7 @@
 @import "variables";
 
+// base card style
+
 @mixin portfolio-card-base-style {
   border-radius: 10px;
   overflow: hidden;
@@ -11,86 +13,72 @@
   width: 90%;
   max-width: 800px;
 
-  @media (max-width: 414px) {
+  .thumbnail {
+    width: 35%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .stack {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-top: -10px;
+
+    height: 50px;
+
+    &_item {
+      max-width: 25px;
+      max-height: 30px;
+    }
+  }
+
+  .body {
+    padding: 17px 25px;
+
+    display: flex;
     flex-direction: column;
+    gap: 15px;
 
-    .thumbnail {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      margin-bottom: 10px;
+    h1 {
+      font-family: $font-primary;
     }
 
-    .stack {
-      margin-top: 2px;
-
-      &_item {
-        max-width: 30px;
-        max-height: 35px;
-      }
+    p {
+      font-family: $font-secondary;
+      font-size: 0.87rem;
+      line-height: 1.4;
+      font-weight: 400;
     }
   }
 }
 
-.portfolioCard {
-  &_light {
-    @include portfolio-card-base-style();
-    color: $light-text;
-    background-color: rgba($light-background2, 0.2);
-  }
+//light and dark card variations
 
-  &_dark {
-    @include portfolio-card-base-style();
-    color: $dark-text;
-    background-color: rgba($dark-background2, 0.5);
-  }
+.portfolioCard_light {
+  @include portfolio-card-base-style();
+  color: $light-text;
+  background-color: rgba($light-background2, 0.2);
 }
 
-.thumbnail {
-  width: 35%;
-  object-fit: cover;
-  object-position: top;
+.portfolioCard_dark {
+  @include portfolio-card-base-style();
+  color: $dark-text;
+  background-color: rgba($dark-background2, 0.5);
 }
 
-.stack {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 12px;
-  margin-top: -10px;
+//buttons
 
-  height: 50px;
-
-  &_item {
-    max-width: 25px;
-    max-height: 30px;
-  }
-}
-
-.body {
-  padding: 17px 25px;
-
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-
-  h1 {
-    font-family: $font-primary;
-  }
-
-  p {
-    font-family: $font-secondary;
-    font-size: 0.87rem;
-    line-height: 1.4;
-    font-weight: 400;
-  }
-}
+//container
 
 .buttons {
   margin-top: auto;
   display: flex;
   gap: 15px;
 }
+
+//dark
 
 .btn_livesite_dark {
   @include button($dark-primary, $dark-background, none);
@@ -105,6 +93,8 @@
   @include button(transparent, $dark-primary, none);
 }
 
+//light
+
 .btn_livesite_light {
   @include button($light-primary, $light-background, none);
 }
@@ -118,7 +108,41 @@
   @include button(transparent, $light-primary, none);
 }
 
+//mobile styles
+
 @media (max-width: 414px) {
+  .portfolioCard_light {
+    @include portfolio-card-base-style();
+    color: $light-text;
+    background-color: rgba($light-background2, 0.2);
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .portfolioCard_dark {
+    @include portfolio-card-base-style();
+    color: $dark-text;
+    background-color: rgba($dark-background2, 0.5);
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .thumbnail {
+    width: 100% !important;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .stack {
+    margin-top: 2px;
+
+    &_item {
+      max-width: 30px;
+      max-height: 35px;
+    }
+  }
+
   .buttons {
     margin-top: auto;
     display: flex;

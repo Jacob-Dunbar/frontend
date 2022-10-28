@@ -1,6 +1,6 @@
 import styles from "../styles/portfoliopiece.module.scss";
 
-//techstack icons
+// Techstack badge svg paths
 
 const cssIcon = "/icons/css.svg";
 const htmlIcon = "/icons/html.svg";
@@ -14,6 +14,8 @@ const threejsIcon = "/icons/threejs.svg";
 function PortfolioPiece(props) {
   const imageUrl = props.image.data[0].attributes.url;
   const techStack = props.techstack.tech;
+
+  // Create array of tech badges for JSON data from strapi
 
   const stackElements = techStack.map((item) => {
     if (item === "html") {
@@ -48,13 +50,7 @@ function PortfolioPiece(props) {
       <img className={styles.thumbnail} src={imageUrl} alt="thumbnail" />
       <div className={styles.body}>
         <h1>_{props.title}</h1>
-        {/* <p>{props.description}</p> */}
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dis
-          consectetur auctor purus at. Sit id sapien facilisis et, amet,
-          sollicitudin nec. Adipiscing commodo magna. sollicitudin nec.
-          Adipiscing commodo magna.
-        </p>
+        <p>{props.description}</p>
         <div className={styles.stack}>{stackElements}</div>
         <div className={styles.buttons}>
           <button

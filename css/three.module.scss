@@ -1,5 +1,7 @@
 @import "variables";
 
+//mixin for text block
+
 @mixin text-block() {
   position: absolute;
   bottom: 21vh;
@@ -25,6 +27,8 @@
     font-size: 0.9rem;
   }
 }
+
+//gradient heading
 
 @mixin gradient-heading($color1, $color2) {
   font-family: $font-secondary;
@@ -52,17 +56,14 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  // background-color: aqua;
 
   .floater1_light {
-    // @include floater(rgba($light-primary, 0.1));
     position: absolute;
     top: 10%;
     right: -20%;
     width: 70%;
     min-width: 500px;
     opacity: 0.25;
-    // background-color: aqua;
   }
 
   .floater2_light {
@@ -140,7 +141,6 @@
 }
 
 //buttons
-
 .buttons {
   position: absolute;
   bottom: 12vh;
@@ -157,7 +157,6 @@
 }
 
 // buttons light mode
-
 .emailbtn_light {
   @include button($light-primary, $light-background, none);
 }
@@ -167,11 +166,16 @@
 }
 
 // //buttons dark
-
 .emailbtn_dark {
   @include button($dark-primary, $dark-background, none);
 }
 
 .linkedinbtn_dark {
   @include button(transparent, $dark-primary, $dark-primary);
+}
+
+@media (max-width: 414px) {
+  .home {
+    height: 92vh;
+  }
 }
