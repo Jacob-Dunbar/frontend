@@ -82,6 +82,7 @@ export default function Home({ data }) {
       />
 
       <ThreeHeader darkMode={darkMode} />
+
       <div ref={portfolioSection}></div>
       <Portfolio darkMode={darkMode} data={data} />
 

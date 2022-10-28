@@ -20,6 +20,14 @@ function Portfolio(props) {
 
   return (
     <section className={css.portfolio}>
+      <div className={css.floater_container}>
+        <div
+          className={props.darkMode ? css.floater1_dark : css.floater1_light}
+        ></div>
+        <div
+          className={props.darkMode ? css.floater2_dark : css.floater2_light}
+        ></div>
+      </div>
       <h1 className={props.darkMode ? css.heading_dark : css.heading_light}>
         Portfolio
       </h1>

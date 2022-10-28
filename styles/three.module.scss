@@ -46,6 +46,43 @@
   height: 90vh;
 }
 
+// Floaters
+
+.floater_container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  // background-color: aqua;
+
+  .floater1_light {
+    @include floater(rgba($light-primary, 0.1));
+    right: -10%;
+    top: -50%;
+    width: 35%;
+  }
+
+  .floater2_light {
+    @include floater(rgba($light-primary, 0.1));
+    left: -10%;
+    bottom: -20%;
+    width: 40%;
+  }
+
+  .floater1_dark {
+    @include floater(rgba($dark-primary, 0.05));
+    right: -10%;
+    top: -30%;
+    width: 35%;
+  }
+
+  .floater2_dark {
+    @include floater(rgba($dark-primary, 0.05));
+    left: -10%;
+    bottom: -20%;
+    width: 40%;
+  }
+}
+
 //show and hide three.header
 
 .hidden {

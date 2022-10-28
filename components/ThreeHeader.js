@@ -13,6 +13,14 @@ export default function ThreeHeader(props) {
 
   return (
     <div className={css.home}>
+      <div className={css.floater_container}>
+        <div
+          className={props.darkMode ? css.floater1_dark : css.floater1_light}
+        ></div>
+        <div
+          className={props.darkMode ? css.floater2_dark : css.floater2_light}
+        ></div>
+      </div>
       {/* light mode face vvv */}
       <Canvas className={!props.darkMode ? css.show : css.hidden}>
         <Suspense fallback={null}>
