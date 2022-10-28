@@ -1,16 +1,12 @@
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 
-import { Suspense, useRef, useState } from "react";
-import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import { Suspense, useState } from "react";
+
 import Face from "./Face2.js";
 import css from "../styles/three.module.scss";
 import Skull from "../components/Skull.js";
-import { useSpring, animated } from "@react-spring/three";
 
 export default function ThreeHeader(props) {
-  const [hovered, setHovered] = useState(false);
-  const [active, setActive] = useState(false);
-
   return (
     <div className={css.home}>
       {/* foreground blobs */}
@@ -39,14 +35,7 @@ export default function ThreeHeader(props) {
             color={"#FFFFFF"}
           />
 
-          <Face
-            onPointerOver={() => setHovered(true)}
-            onPointerOut={() => setHovered(false)}
-            onClick={() => setActive(!active)}
-            scale={[0.5, 0.5, 0.5]}
-            hovered={hovered}
-            active={active}
-          />
+          <Face scale={[0.5, 0.5, 0.5]} />
         </Suspense>
       </Canvas>
 
@@ -69,7 +58,7 @@ export default function ThreeHeader(props) {
         </p>
         <p>
           Tellus, curabitur ornare etiam scelerisque fames mauris donec rhoncus.
-          Erat lectus est nisl eget tellus egestas enim{" "}
+          Erat lectus est nisl eget tellus egestas enim
         </p>
       </section>
       <div className={css.buttons}>

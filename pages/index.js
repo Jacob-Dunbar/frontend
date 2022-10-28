@@ -6,6 +6,7 @@ import ThreeHeader from "../components/ThreeHeader.js";
 import { useState, useRef } from "react";
 import Portfolio from "../components/Portfolio.js";
 import ScrollToTop from "../components/ScrollToTop.js";
+import ScrollDown from "../components/ScrollDown.js";
 
 // strapi CMS
 
@@ -72,6 +73,11 @@ export default function Home({ data }) {
       </Head>
 
       <ScrollToTop darkMode={darkMode} />
+      <ScrollDown
+        darkMode={darkMode}
+        scrollToSection={scrollToSection}
+        portfolioSection={portfolioSection}
+      />
 
       <Navbar
         darkMode={darkMode}

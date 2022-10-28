@@ -64,3 +64,49 @@
 
   cursor: pointer;
 }
+
+@media (max-width: 412px) {
+  .navbar {
+    &_light {
+      justify-content: flex-end;
+      align-items: flex-end;
+      height: 8vh;
+      h1 {
+        display: none;
+      }
+
+      li {
+        display: none;
+      }
+
+      .darkmode_icon {
+        display: block;
+
+        .moon {
+          width: 20px;
+        }
+      }
+    }
+
+    &_dark {
+      justify-content: flex-end;
+      align-items: flex-end;
+      height: 8vh;
+      h1 {
+        display: none;
+      }
+
+      li {
+        display: none;
+      }
+
+      .darkmode_icon {
+        display: block;
+
+        .sun {
+          width: 27px;
+        }
+      }
+    }
+  }
+}

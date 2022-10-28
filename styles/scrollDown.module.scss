@@ -1,0 +1,10 @@
+.scrollDown {
+  transform: rotate(180deg);
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 30px;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0.9;
+}
