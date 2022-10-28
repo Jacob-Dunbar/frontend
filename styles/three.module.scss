@@ -143,11 +143,13 @@
 
 .buttons {
   position: absolute;
-  bottom: 10vh;
+  bottom: 12vh;
+  width: 100%;
 
   left: 50%;
   transform: translate(-50%);
   display: flex;
+  justify-content: center;
   gap: 18px;
   z-index: 2;
 

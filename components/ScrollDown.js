@@ -1,31 +1,23 @@
 import { useState, useEffect } from "react";
 import css from "../styles/scrollDown.module.scss";
 
-function ScrollToTop(props) {
-  const [showScrollToTop, setShowScrollToTop] = useState(false);
+function ScrollDown(props) {
+  const [showScrollDown, setShowScrollDown] = useState(true);
 
   // listen for scroll and show button when scrolled more than 300px
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY < 300) {
-        setShowScrollToTop(true);
+        setShowScrollDown(true);
       } else {
-        setShowScrollToTop(false);
+        setShowScrollDown(false);
       }
     });
   }, []);
 
-  // scroll to top when pressed
-  function scrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }
-
   return (
     <div>
-      {showScrollToTop && (
+      {showScrollDown && (
         <img
           src={
             props.darkMode ? "/icons/dark_top2.svg" : "/icons/light_top2.svg"
@@ -38,4 +30,4 @@ function ScrollToTop(props) {
   );
 }
 
-export default ScrollToTop;
+export default ScrollDown;

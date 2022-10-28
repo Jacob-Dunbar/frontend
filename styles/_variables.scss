@@ -18,7 +18,7 @@ $font-secondary: "Inter", sans-serif;
 
 @mixin button($bgcol, $textcol, $bordercol) {
   outline: none;
-  padding: 13px 17px;
+  padding: 10px 20px;
   border-radius: 10px;
   border: none;
   font-size: 0.9rem;

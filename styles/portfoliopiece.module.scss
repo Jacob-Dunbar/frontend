@@ -8,9 +8,10 @@
 
   display: flex;
 
+  width: 90%;
   max-width: 800px;
 
-  @media (max-width: 412px) {
+  @media (max-width: 414px) {
     flex-direction: column;
 
     .thumbnail {
@@ -47,7 +48,7 @@
 
 .thumbnail {
   width: 35%;
-  object-fit: fill;
+  object-fit: cover;
   object-position: top;
 }
 
@@ -115,4 +116,58 @@
 .btn_figma_light {
   margin-left: auto;
   @include button(transparent, $light-primary, none);
+}
+
+@media (max-width: 414px) {
+  .buttons {
+    margin-top: auto;
+    display: flex;
+    gap: 10px;
+  }
+
+  .btn_livesite_dark {
+    @include button($dark-primary, $dark-background, none);
+    padding: 7px 14px;
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+  }
+
+  .btn_github_dark {
+    @include button(transparent, $dark-primary, $dark-primary);
+    padding: 7px 14px;
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+  }
+
+  .btn_figma_dark {
+    margin-left: auto;
+    @include button(transparent, $dark-primary, none);
+    padding: 7px 14px;
+    font-size: 0.7rem;
+    margin-right: -5px;
+    margin-bottom: 10px;
+  }
+
+  .btn_livesite_light {
+    @include button($light-primary, $light-background, none);
+    padding: 7px 14px;
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+  }
+
+  .btn_github_light {
+    @include button(transparent, $light-primary, $light-primary);
+    padding: 7px 14px;
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+  }
+
+  .btn_figma_light {
+    margin-left: auto;
+    @include button(transparent, $light-primary, none);
+    padding: 7px 14px;
+    font-size: 0.7rem;
+    margin-right: -5px;
+    margin-bottom: 10px;
+  }
 }
