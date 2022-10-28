@@ -1,4 +1,4 @@
-import styles from "../styles/portfoliopiece.module.scss";
+import css from "../css/portfoliopiece.module.scss";
 
 // Techstack badge svg paths
 
@@ -19,59 +19,53 @@ function PortfolioPiece(props) {
 
   const stackElements = techStack.map((item) => {
     if (item === "html") {
-      return <img src={htmlIcon} key={item} className={styles.stack_item} />;
+      return <img src={htmlIcon} key={item} className={css.stack_item} />;
     } else if (item === "css") {
-      return <img src={cssIcon} key={item} className={styles.stack_item} />;
+      return <img src={cssIcon} key={item} className={css.stack_item} />;
     } else if (item === "react") {
-      return <img src={reactIcon} key={item} className={styles.stack_item} />;
+      return <img src={reactIcon} key={item} className={css.stack_item} />;
     } else if (item === "next.js") {
-      return <img src={nextjsIcon} key={item} className={styles.stack_item} />;
+      return <img src={nextjsIcon} key={item} className={css.stack_item} />;
     } else if (item === "javascript") {
-      return (
-        <img src={javascriptIcon} key={item} className={styles.stack_item} />
-      );
+      return <img src={javascriptIcon} key={item} className={css.stack_item} />;
     } else if (item === "sass") {
-      return <img src={sassIcon} key={item} className={styles.stack_item} />;
+      return <img src={sassIcon} key={item} className={css.stack_item} />;
     } else if (item === "tailwind") {
-      return (
-        <img src={tailwindIcon} key={item} className={styles.stack_item} />
-      );
+      return <img src={tailwindIcon} key={item} className={css.stack_item} />;
     } else if (item === "threejs") {
-      return <img src={threejsIcon} key={item} className={styles.stack_item} />;
+      return <img src={threejsIcon} key={item} className={css.stack_item} />;
     }
   });
 
   return (
     <div
       className={
-        props.darkMode ? styles.portfolioCard_dark : styles.portfolioCard_light
+        props.darkMode ? css.portfolioCard_dark : css.portfolioCard_light
       }
     >
-      <img className={styles.thumbnail} src={imageUrl} alt="thumbnail" />
-      <div className={styles.body}>
+      <img className={css.thumbnail} src={imageUrl} alt="thumbnail" />
+      <div className={css.body}>
         <h1>_{props.title}</h1>
         <p>{props.description}</p>
-        <div className={styles.stack}>{stackElements}</div>
-        <div className={styles.buttons}>
+        <div className={css.stack}>{stackElements}</div>
+        <div className={css.buttons}>
           <button
             className={
-              props.darkMode
-                ? styles.btn_livesite_dark
-                : styles.btn_livesite_light
+              props.darkMode ? css.btn_livesite_dark : css.btn_livesite_light
             }
           >
             Live Site
           </button>
           <button
             className={
-              props.darkMode ? styles.btn_github_dark : styles.btn_github_light
+              props.darkMode ? css.btn_github_dark : css.btn_github_light
             }
           >
             Githib Repo
           </button>
           <button
             className={
-              props.darkMode ? styles.btn_figma_dark : styles.btn_figma_light
+              props.darkMode ? css.btn_figma_dark : css.btn_figma_light
             }
           >
             Figma Design

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import styles from "../styles/contact.module.scss";
+import css from "../css/contact.module.scss";
 
 function Contact(props) {
   //form data object

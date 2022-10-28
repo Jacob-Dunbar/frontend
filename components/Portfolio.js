@@ -1,4 +1,4 @@
-import css from "../styles/portfolio.module.scss";
+import css from "../css/portfolio.module.scss";
 import PortfolioPiece from "./PortfolioPiece.js";
 
 function Portfolio(props) {

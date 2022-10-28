@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import css from "../styles/scrollDown.module.scss";
+import css from "../css/scrollDown.module.scss";
 
 function ScrollDown(props) {
   const [showScrollDown, setShowScrollDown] = useState(true);
 
-  // listen for scroll and show button when scrolled more than 300px
+  // Listen for scroll and hide button when scrolled more than 300px
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY < 300) {

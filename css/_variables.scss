@@ -1,3 +1,5 @@
+// colours
+
 $light-text: #1f2023;
 $light-background: #f1f4ef;
 $light-background2: #fdfffc;
@@ -15,6 +17,8 @@ $inactive: grey;
 
 $font-primary: Minecraft;
 $font-secondary: "Inter", sans-serif;
+
+//buttons
 
 @mixin button($bgcol, $textcol, $bordercol) {
   outline: none;
@@ -34,6 +38,8 @@ $font-secondary: "Inter", sans-serif;
     scale: (1.03);
   }
 }
+
+// forground blobs
 
 @mixin floater($col) {
   position: absolute;

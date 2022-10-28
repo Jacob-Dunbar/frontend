@@ -1,15 +1,14 @@
 import { Canvas } from "@react-three/fiber";
-
-import { Suspense, useState } from "react";
-
+import { Suspense } from "react";
 import Face from "./Face2.js";
-import css from "../styles/three.module.scss";
+import css from "../css/three.module.scss";
 import Skull from "../components/Skull.js";
 
 export default function ThreeHeader(props) {
   return (
     <div className={css.home}>
       {/* foreground blobs */}
+
       <div className={css.floater_container}>
         <img
           className={css.floater1_light}
@@ -22,6 +21,7 @@ export default function ThreeHeader(props) {
       </div>
 
       {/* light mode face model */}
+
       <Canvas className={!props.darkMode ? css.show : css.hidden}>
         <Suspense fallback={null}>
           <ambientLight intensity={0.4} />
@@ -40,6 +40,7 @@ export default function ThreeHeader(props) {
       </Canvas>
 
       {/* dark mode skull model */}
+
       <Canvas className={props.darkMode ? css.show : css.hidden}>
         <Suspense fallback={null}>
           <Skull />
@@ -47,6 +48,7 @@ export default function ThreeHeader(props) {
       </Canvas>
 
       {/* about me section */}
+
       <section className={props.darkMode ? css.text_dark : css.text_light}>
         <h1>Jacob Dunbar</h1>
         <h2>Web Developer</h2>
