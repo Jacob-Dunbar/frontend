@@ -1,8 +1,13 @@
 .scrollTop {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 30px;
+  right: 30px;
   width: 30px;
   cursor: pointer;
+  z-index: 2;
   opacity: 0.9;
+
+  &:hover {
+    scale: 1.05;
+  }
 }

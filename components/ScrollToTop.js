@@ -4,6 +4,7 @@ import css from "../styles/scrollToTop.module.scss";
 function ScrollToTop(props) {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
 
+  // listen for scroll and show button when scrolled more than 300px
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 300) {
@@ -14,6 +15,7 @@ function ScrollToTop(props) {
     });
   }, []);
 
+  // scroll to top when pressed
   function scrollToTop() {
     window.scrollTo({
       top: 0,
