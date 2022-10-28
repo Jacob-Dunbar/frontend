@@ -82,6 +82,10 @@
       @include button($bordercol, $textcol, none);
     }
   }
+
+  @media (max-width: 412px) {
+    padding-inline: 5px;
+  }
 }
 
 // Floaters

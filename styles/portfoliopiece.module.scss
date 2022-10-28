@@ -9,6 +9,26 @@
   display: flex;
 
   max-width: 800px;
+
+  @media (max-width: 412px) {
+    flex-direction: column;
+
+    .thumbnail {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .stack {
+      margin-top: 2px;
+
+      &_item {
+        max-width: 30px;
+        max-height: 35px;
+      }
+    }
+  }
 }
 
 .portfolioCard {
