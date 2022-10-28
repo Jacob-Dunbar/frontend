@@ -13,15 +13,19 @@ export default function ThreeHeader(props) {
 
   return (
     <div className={css.home}>
+      {/* foreground blobs */}
       <div className={css.floater_container}>
-        <div
-          className={props.darkMode ? css.floater1_dark : css.floater1_light}
-        ></div>
+        <img
+          className={css.floater1_light}
+          src={props.darkMode ? "/blobs/blob1_d.svg" : "/blobs/blob1_l.svg"}
+          alt="forground blobs"
+        />
         <div
           className={props.darkMode ? css.floater2_dark : css.floater2_light}
         ></div>
       </div>
-      {/* light mode face vvv */}
+
+      {/* light mode face model */}
       <Canvas className={!props.darkMode ? css.show : css.hidden}>
         <Suspense fallback={null}>
           <ambientLight intensity={0.4} />
@@ -46,13 +50,14 @@ export default function ThreeHeader(props) {
         </Suspense>
       </Canvas>
 
-      {/* dark mode skull vvv */}
+      {/* dark mode skull model */}
       <Canvas className={props.darkMode ? css.show : css.hidden}>
         <Suspense fallback={null}>
           <Skull />
         </Suspense>
       </Canvas>
 
+      {/* about me section */}
       <section className={props.darkMode ? css.text_dark : css.text_light}>
         <h1>Jacob Dunbar</h1>
         <h2>Web Developer</h2>
