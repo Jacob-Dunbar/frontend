@@ -1,27 +1,5 @@
 @import "variables";
 
-.form_container {
-  margin-top: 150px;
-  position: relative;
-  width: 100%;
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-
-  .heading_light {
-    font-family: $font-primary;
-    color: $light-text;
-    margin-bottom: 10vh;
-  }
-  .heading_dark {
-    font-family: $font-primary;
-    color: $dark-text;
-    margin-bottom: 10vh;
-  }
-}
-
 @mixin form($bordercol, $bgcol, $textcol, $inputcol) {
   display: flex;
   flex-direction: column;
@@ -89,44 +67,31 @@
   }
 }
 
-// Floaters
+// contact page
 
-.floater_container {
-  position: absolute;
+.contact {
+  margin-top: 150px;
+  position: relative;
   width: 100%;
-  height: 100%;
-  pointer-events: none;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 
-  // background-color: aqua;
-
-  .floater1_light {
-    @include floater(rgba($light-primary, 0.05));
-    right: -10%;
-    top: -50%;
-    width: 35%;
+  .heading_light {
+    font-family: $font-primary;
+    color: $light-text;
+    margin-bottom: 10vh;
   }
-
-  .floater2_light {
-    @include floater(rgba($light-primary, 0.05));
-    left: 20%;
-    bottom: 0;
-    width: 30%;
-  }
-
-  .floater1_dark {
-    @include floater(rgba($dark-primary, 0.05));
-    right: -10%;
-    top: -50%;
-    width: 35%;
-  }
-
-  .floater2_dark {
-    @include floater(rgba($dark-primary, 0.05));
-    left: 20%;
-    bottom: 0;
-    width: 30%;
+  .heading_dark {
+    font-family: $font-primary;
+    color: $dark-text;
+    margin-bottom: 10vh;
   }
 }
+
+//Contact form
 
 .form_light {
   @include form(
@@ -150,9 +115,6 @@
   border: 2px $error solid !important;
 }
 
-.field_ok {
-}
-
 .err_text {
   color: $error;
   font-size: 0.8rem;
@@ -163,4 +125,41 @@
 
 .inactive {
   background-color: rgba($inactive, 0.5) !important;
+}
+
+// foreground blobs
+
+.blob_container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  .blob1_light {
+    @include blob(rgba($light-primary, 0.05));
+    right: -10%;
+    top: -50%;
+    width: 35%;
+  }
+
+  .blob2_light {
+    @include blob(rgba($light-primary, 0.05));
+    left: 20%;
+    bottom: 0;
+    width: 30%;
+  }
+
+  .blob1_dark {
+    @include blob(rgba($dark-primary, 0.05));
+    right: -10%;
+    top: -50%;
+    width: 35%;
+  }
+
+  .blob2_dark {
+    @include blob(rgba($dark-primary, 0.05));
+    left: 20%;
+    bottom: 0;
+    width: 30%;
+  }
 }

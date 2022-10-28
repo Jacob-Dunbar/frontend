@@ -1,5 +1,7 @@
 @import "variables";
 
+//base navbar styles
+
 @mixin navbar-base-styles {
   display: flex;
   justify-content: space-between;
@@ -22,90 +24,91 @@
   }
 }
 
-.navbar {
-  &_light {
-    @include navbar-base-styles();
-    color: $light-text;
+// navbar light
 
-    li {
-      cursor: pointer;
-    }
+.navbar_light {
+  @include navbar-base-styles();
+  color: $light-text;
 
-    li:hover {
-      color: $light-secondary;
-    }
+  li {
+    cursor: pointer;
   }
 
-  &_dark {
-    @include navbar-base-styles();
-    color: $dark-text;
+  li:hover {
+    color: $light-secondary;
+  }
 
-    li {
-      cursor: pointer;
-    }
-
-    li:hover {
-      color: $dark-primary;
-    }
+  .moon {
+    width: 15px;
+    margin-right: 14px;
+    margin-top: 2px;
+    cursor: pointer;
   }
 }
 
-.sun {
-  width: 20px;
-  margin-right: 10px;
-  margin-top: 2px;
-  cursor: pointer;
+// navbar dark
+
+.navbar_dark {
+  @include navbar-base-styles();
+  color: $dark-text;
+
+  li {
+    cursor: pointer;
+  }
+
+  li:hover {
+    color: $dark-primary;
+  }
+
+  .sun {
+    width: 20px;
+    margin-right: 10px;
+    margin-top: 2px;
+    cursor: pointer;
+  }
 }
 
-.moon {
-  width: 15px;
-  margin-right: 14px;
-  margin-top: 2px;
-
-  cursor: pointer;
-}
+// mobile styles
 
 @media (max-width: 414px) {
-  .navbar {
-    &_light {
-      justify-content: flex-end;
-      align-items: flex-end;
-      height: 8vh;
-      h1 {
-        display: none;
-      }
-
-      li {
-        display: none;
-      }
-
-      .darkmode_icon {
-        display: block;
-
-        .moon {
-          width: 20px;
-        }
-      }
+  .navbar_light {
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 8vh;
+    h1 {
+      display: none;
     }
 
-    &_dark {
-      justify-content: flex-end;
-      align-items: flex-end;
-      height: 8vh;
-      h1 {
-        display: none;
+    li {
+      display: none;
+    }
+
+    .darkmode_icon {
+      display: block;
+
+      .moon {
+        width: 20px;
       }
+    }
+  }
 
-      li {
-        display: none;
-      }
+  .navbar_dark {
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 8vh;
+    h1 {
+      display: none;
+    }
 
-      .darkmode_icon {
-        display: block;
+    li {
+      display: none;
+    }
 
-        .sun {
-          width: 27px;
-        }
+    .darkmode_icon {
+      display: block;
+
+      .sun {
+        width: 27px;
       }
     }
   }

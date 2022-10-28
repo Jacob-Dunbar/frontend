@@ -28,14 +28,14 @@ function Portfolio(props) {
       {portfolioElements}
 
       {/* foreground blobs */}
-      <div className={css.floater_container}>
+      <div className={css.blob_container}>
         <img
-          className={css.floater2_light}
+          className={css.blob2_light}
           src={props.darkMode ? "/blobs/blob2_d.svg" : "/blobs/blob2_l.svg"}
           alt="foreground blob"
         />
         <div
-          className={props.darkMode ? css.floater2_dark : css.floater2_light}
+          className={props.darkMode ? css.blob2_dark : css.blob2_light}
         ></div>
       </div>
     </section>

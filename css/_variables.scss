@@ -41,7 +41,7 @@ $font-secondary: "Inter", sans-serif;
 
 // forground blobs
 
-@mixin floater($col) {
+@mixin blob($col) {
   position: absolute;
   background-color: $col;
   aspect-ratio: 1 / 1;

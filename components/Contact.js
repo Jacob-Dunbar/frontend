@@ -124,7 +124,7 @@ function Contact(props) {
   //remember to control inputs so formData state drives the input state and they stay insync. value={formData.input}
 
   return (
-    <div className={css.form_container}>
+    <div className={css.contact}>
       {/* contact section */}
       <h1 className={props.darkMode ? css.heading_dark : css.heading_light}>
         Contact
@@ -181,12 +181,12 @@ function Contact(props) {
 
       {/* foreground blobs */}
 
-      <div className={css.floater_container}>
+      <div className={css.blob_container}>
         <div
-          className={props.darkMode ? css.floater1_dark : css.floater1_light}
+          className={props.darkMode ? css.blob1_dark : css.blob1_light}
         ></div>
         <div
-          className={props.darkMode ? css.floater2_dark : css.floater2_light}
+          className={props.darkMode ? css.blob2_dark : css.blob2_light}
         ></div>
       </div>
     </div>

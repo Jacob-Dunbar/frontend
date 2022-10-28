@@ -2,7 +2,7 @@ import Head from "next/head";
 
 import Navbar from "../components/Navbar.js";
 import Contact from "../components/Contact";
-import ThreeHeader from "../components/ThreeHeader.js";
+import ThreeHeader from "../components/Header.js";
 import { useState, useRef } from "react";
 import Portfolio from "../components/Portfolio.js";
 import ScrollToTop from "../components/ScrollToTop.js";

@@ -1,22 +1,22 @@
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import Face from "./Face2.js";
-import css from "../css/three.module.scss";
-import Skull from "../components/Skull.js";
+import css from "../css/header.module.scss";
+import Skull from "./Skull.js";
 
 export default function ThreeHeader(props) {
   return (
     <div className={css.home}>
       {/* foreground blobs */}
 
-      <div className={css.floater_container}>
+      <div className={css.blob_container}>
         <img
-          className={css.floater1_light}
+          className={css.blob1_light}
           src={props.darkMode ? "/blobs/blob1_d.svg" : "/blobs/blob1_l.svg"}
           alt="forground blobs"
         />
         <div
-          className={props.darkMode ? css.floater2_dark : css.floater2_light}
+          className={props.darkMode ? css.blob2_dark : css.blob2_light}
         ></div>
       </div>
 
