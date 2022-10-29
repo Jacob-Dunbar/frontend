@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 import { useGLTF, Float } from "@react-three/drei";
-import { useFrame, useThree } from "react-three-fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import { useSpring, a } from "@react-spring/three";
 
 export default function Model({ ...props }) {
