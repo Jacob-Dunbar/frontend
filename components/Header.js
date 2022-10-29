@@ -28,9 +28,9 @@ export default function ThreeHeader(props) {
 
           <spotLight
             intensity={0.7}
-            angle={0.9}
+            angle={0.7}
             penumbra={1}
-            position={[10, 80, 160]}
+            position={[10, 80, 200]}
             castShadow
             color={"#FFFFFF"}
           />

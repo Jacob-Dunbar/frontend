@@ -24,7 +24,7 @@ function PortfolioPiece(props) {
       return <img src={cssIcon} key={item} className={css.stack_item} />;
     } else if (item === "react") {
       return <img src={reactIcon} key={item} className={css.stack_item} />;
-    } else if (item === "next.js") {
+    } else if (item === "nextjs") {
       return <img src={nextjsIcon} key={item} className={css.stack_item} />;
     } else if (item === "javascript") {
       return <img src={javascriptIcon} key={item} className={css.stack_item} />;
@@ -32,10 +32,12 @@ function PortfolioPiece(props) {
       return <img src={sassIcon} key={item} className={css.stack_item} />;
     } else if (item === "tailwind") {
       return <img src={tailwindIcon} key={item} className={css.stack_item} />;
-    } else if (item === "threejs") {
+    } else if (item === "three") {
       return <img src={threejsIcon} key={item} className={css.stack_item} />;
     }
   });
+
+  console.log(props.figma);
 
   return (
     <div
@@ -54,21 +56,22 @@ function PortfolioPiece(props) {
               props.darkMode ? css.btn_livesite_dark : css.btn_livesite_light
             }
           >
-            Live Site
+            <a href={props.livesite}>Live Site</a>
           </button>
           <button
             className={
               props.darkMode ? css.btn_github_dark : css.btn_github_light
             }
           >
-            Githib Repo
+            <a href={props.repo}>Githib Repo</a>
           </button>
           <button
+            style={props.figma ? { display: "block" } : { display: "none" }}
             className={
               props.darkMode ? css.btn_figma_dark : css.btn_figma_light
             }
           >
-            Figma Design
+            <a href={props.figma}>Figma Design</a>
           </button>
         </div>
       </div>

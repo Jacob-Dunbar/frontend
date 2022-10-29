@@ -82,15 +82,21 @@
 
 .btn_livesite_dark {
   @include button($dark-primary, $dark-background, none);
+  padding: 7px 12px;
+  font-size: 0.8rem;
 }
 
 .btn_github_dark {
   @include button(transparent, $dark-primary, $dark-primary);
+  font-size: 0.8rem;
+  padding: 7px 12px;
 }
 
 .btn_figma_dark {
   margin-left: auto;
   @include button(transparent, $dark-primary, none);
+  font-size: 0.8rem;
+  padding: 7px 12px;
 }
 
 //light
