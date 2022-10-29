@@ -48,6 +48,8 @@ export async function getStaticProps(context) {
 
   return {
     props: data,
+    // check for new data on CMS once every ten seconds
+    revalidate: 10,
   };
 }
 
