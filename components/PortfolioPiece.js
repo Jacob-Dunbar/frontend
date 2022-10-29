@@ -37,8 +37,6 @@ function PortfolioPiece(props) {
     }
   });
 
-  console.log(props.figma);
-
   return (
     <div
       className={
@@ -47,7 +45,7 @@ function PortfolioPiece(props) {
     >
       <img className={css.thumbnail} src={imageUrl} alt="thumbnail" />
       <div className={css.body}>
-        <h1>_{props.title}</h1>
+        <h1>{props.title}</h1>
         <p>{props.description}</p>
         <div className={css.stack}>{stackElements}</div>
         <div className={css.buttons}>

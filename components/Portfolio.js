@@ -16,6 +16,7 @@ function Portfolio(props) {
           livesite={piece.attributes.livesite}
           repo={piece.attributes.repo}
           image={piece.attributes.image}
+          figma={piece.attributes.figma}
         />
       );
     })
