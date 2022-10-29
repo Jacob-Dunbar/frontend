@@ -83,11 +83,15 @@
     font-family: $font-primary;
     color: $light-text;
     margin-bottom: 10vh;
+    font-weight: 400;
+    letter-spacing: 1px;
   }
   .heading_dark {
     font-family: $font-primary;
     color: $dark-text;
     margin-bottom: 10vh;
+    font-weight: 400;
+    letter-spacing: 1px;
   }
 }
 

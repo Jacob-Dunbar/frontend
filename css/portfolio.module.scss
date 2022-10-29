@@ -6,6 +6,8 @@
   font-size: 2rem;
   margin-top: 50px;
   margin-bottom: 3vh;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 
 // Portfolio page
@@ -38,10 +40,12 @@
   pointer-events: none;
 
   .blob1_light {
-    @include blob(rgba($light-secondary, 0.1));
-    right: 10%;
-    top: -25%;
-    width: 35%;
+    position: absolute;
+    right: 0%;
+    top: 30%;
+    width: 70%;
+    opacity: 0.4;
+    pointer-events: none;
   }
 
   .blob2_light {

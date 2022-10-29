@@ -14,6 +14,7 @@
 
   h1 {
     font-family: $font-primary;
+    letter-spacing: 1px;
   }
 
   ul {
@@ -21,6 +22,7 @@
     display: flex;
     align-items: center;
     gap: 25px;
+    letter-spacing: 1px;
   }
 }
 

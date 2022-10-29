@@ -18,6 +18,8 @@
     object-fit: cover;
     object-position: top;
     aspect-ratio: 3 / 2;
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
   }
 
   .body {
@@ -38,6 +40,7 @@
       font-size: 0.8rem;
       line-height: 1.4;
       font-weight: 400;
+      opacity: 0.8;
     }
 
     .stack {
@@ -63,12 +66,22 @@
   @include portfolio-card-base-style();
   color: $light-text;
   background-color: rgba($light-background2, 0.2);
+  &:hover {
+    .thumbnail {
+      opacity: 1;
+    }
+  }
 }
 
 .portfolioCard_dark {
   @include portfolio-card-base-style();
   color: $dark-text;
   background-color: rgba($dark-background2, 0.5);
+  &:hover {
+    .thumbnail {
+      opacity: 1;
+    }
+  }
 }
 
 //buttons
