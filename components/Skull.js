@@ -69,9 +69,9 @@ export default function Model({ ...props }) {
           onClick={() => setClicked(!clicked)}
           onPointerOver={() => setHovered(true)}
           onPointerOut={() => setHovered(false)}
-          position={[0, 2.2, 0]}
+          position={[0, 2, 0]}
           rotation={[-0.95, -1.565, 1.9]}
-          scale={[-0.27, -0.25, -0.12]}
+          scale={[-0.27, -0.23, -0.11]}
         >
           <mesh
             geometry={nodes.Cube147.geometry}
