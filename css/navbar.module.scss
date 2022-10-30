@@ -78,8 +78,9 @@
   .navbar_light {
     justify-content: flex-end;
     align-items: flex-end;
-    height: 8vh;
+    height: 0vh;
     z-index: 100;
+    position: relative;
 
     h1 {
       display: none;
@@ -90,6 +91,9 @@
     }
 
     .darkmode_icon {
+      position: absolute;
+      top: 30px;
+      right: 10px;
       display: block;
 
       .moon {
@@ -101,7 +105,10 @@
   .navbar_dark {
     justify-content: flex-end;
     align-items: flex-end;
-    height: 8vh;
+    height: 0vh;
+    z-index: 100;
+    position: relative;
+
     h1 {
       display: none;
     }
@@ -111,6 +118,9 @@
     }
 
     .darkmode_icon {
+      position: absolute;
+      top: 30px;
+      right: 10px;
       display: block;
 
       .sun {

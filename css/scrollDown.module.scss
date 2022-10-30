@@ -12,3 +12,11 @@
     scale: 1.05;
   }
 }
+
+@media (max-width: 414px) {
+  .scrollDown {
+    bottom: 30px;
+    right: 21px;
+    width: 26px;
+  }
+}
