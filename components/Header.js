@@ -57,7 +57,8 @@ export default function ThreeHeader(props) {
         <h1>Jacob Dunbar</h1>
         <h2>Web Developer</h2>
         <p>
-          My name is Jacob, and I'm a code addict. My weapons of choice include:
+          My name is Jacob, and I am a code addict. My weapons of choice
+          include:
         </p>
         <div className={css.devicons}>
           <img
