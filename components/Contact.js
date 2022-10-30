@@ -177,6 +177,10 @@ function Contact(props) {
             {sent ? "Message successfully sent!" : "Send Message"}
           </button>
         </p>
+        <div className={css.emailAdd}>
+          <p>Or email me at:</p>
+          <p>jacob.dunbar@googlemail.com</p>
+        </div>
       </form>
     </div>
   );

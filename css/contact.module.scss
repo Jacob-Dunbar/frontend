@@ -43,6 +43,7 @@
       background-color: rgba($bgcol, 0.5);
       border: none;
       outline: none;
+      color: $inputcol;
 
       box-shadow: 0px 10px 25px 0px #0000001a;
 
@@ -51,6 +52,18 @@
       }
     }
   }
+
+  .emailAdd {
+    margin-top: 20px;
+    text-align: center;
+    // background-color: aqua;
+    p {
+      color: $inputcol;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+  }
+
   .button_container {
     width: 100%;
     display: flex;
