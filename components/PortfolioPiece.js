@@ -5,11 +5,26 @@ import css from "../css/portfoliopiece.module.scss";
 const cssIcon = "/icons/css.svg";
 const htmlIcon = "/icons/html.svg";
 const javascriptIcon = "/icons/javascript.svg";
-const nextjsIcon = "/icons/next.js.svg";
-const reactIcon = "/icons/react.png";
-const sassIcon = "/icons/sass.png";
-const tailwindIcon = "/icons/tailwind.png";
+const nextjsIcon = "/icons/nextjs.svg";
+const reactIcon = "/icons/react.svg";
+const sassIcon = "/icons/sass.svg";
+const tailwindIcon = "/icons/tailwind.svg";
 const threejsIcon = "/icons/threejs.svg";
+const blenderIcon = "/icons/blender.svg";
+const figmaIcon = "/icons/figma.svg";
+const gitIcon = "/icons/git.svg";
+
+const cssIcon_dark = "/icons/css_dark.svg";
+const htmlIcon_dark = "/icons/html_dark.svg";
+const javascriptIcon_dark = "/icons/javascript_dark.svg";
+const nextjsIcon_dark = "/icons/nextjs_dark.svg";
+const reactIcon_dark = "/icons/react_dark.svg";
+const sassIcon_dark = "/icons/sass_dark.svg";
+const tailwindIcon_dark = "/icons/tailwind_dark.svg";
+const threejsIcon_dark = "/icons/threejs_dark.svg";
+const blenderIcon_dark = "/icons/blender_dark.svg";
+const figmaIcon_dark = "/icons/figma_dark.svg";
+const gitIcon_dark = "/icons/git_dark.svg";
 
 function PortfolioPiece(props) {
   const imageUrl = props.image.data[0].attributes.url;
@@ -19,21 +34,93 @@ function PortfolioPiece(props) {
 
   const stackElements = techStack.map((item) => {
     if (item === "html") {
-      return <img src={htmlIcon} key={item} className={css.stack_item} />;
+      return (
+        <img
+          src={props.darkMode ? htmlIcon_dark : htmlIcon}
+          key={item}
+          className={css.stack_item}
+        />
+      );
     } else if (item === "css") {
-      return <img src={cssIcon} key={item} className={css.stack_item} />;
+      return (
+        <img
+          src={props.darkMode ? cssIcon_dark : cssIcon}
+          key={item}
+          className={css.stack_item}
+        />
+      );
     } else if (item === "react") {
-      return <img src={reactIcon} key={item} className={css.stack_item} />;
+      return (
+        <img
+          src={props.darkMode ? reactIcon_dark : reactIcon}
+          key={item}
+          className={css.stack_item}
+        />
+      );
     } else if (item === "nextjs") {
-      return <img src={nextjsIcon} key={item} className={css.stack_item} />;
+      return (
+        <img
+          src={props.darkMode ? nextjsIcon_dark : nextjsIcon}
+          key={item}
+          className={css.stack_item}
+        />
+      );
     } else if (item === "javascript") {
-      return <img src={javascriptIcon} key={item} className={css.stack_item} />;
+      return (
+        <img
+          src={props.darkMode ? javascriptIcon_dark : javascriptIcon}
+          key={item}
+          className={css.stack_item}
+        />
+      );
     } else if (item === "sass") {
-      return <img src={sassIcon} key={item} className={css.stack_item} />;
+      return (
+        <img
+          src={props.darkMode ? sassIcon_dark : sassIcon}
+          key={item}
+          className={css.stack_item}
+        />
+      );
     } else if (item === "tailwind") {
-      return <img src={tailwindIcon} key={item} className={css.stack_item} />;
+      return (
+        <img
+          src={props.darkMode ? tailwindIcon_dark : tailwindIcon}
+          key={item}
+          className={css.stack_item}
+        />
+      );
     } else if (item === "three") {
-      return <img src={threejsIcon} key={item} className={css.stack_item} />;
+      return (
+        <img
+          src={props.darkMode ? threejsIcon_dark : threejsIcon}
+          key={item}
+          className={css.stack_item}
+        />
+      );
+    } else if (item === "blender") {
+      return (
+        <img
+          src={props.darkMode ? blenderIcon_dark : blenderIcon}
+          key={item}
+          className={css.stack_item}
+        />
+      );
+    } else if (item === "figma") {
+      return (
+        <img
+          src={props.darkMode ? thfigmaIcon_dark : thfigmaIcon}
+          key={item}
+          className={css.stack_item}
+        />
+      );
+    } else if (item === "git") {
+      return (
+        <img
+          src={props.darkMode ? gitIcon_dark : gitIcon}
+          key={item}
+          className={css.stack_item}
+        />
+      );
     }
   });
 

@@ -55,6 +55,13 @@
       &_item {
         max-width: 25px;
         max-height: 30px;
+        filter: brightness(0.6);
+        opacity: 0.8;
+
+        &:hover {
+          filter: brightness(1);
+          opacity: 1;
+        }
       }
     }
   }
@@ -138,7 +145,7 @@
 
 //mobile styles
 
-@media (max-width: 414px) {
+@media (max-width: 415px) {
   .portfolioCard_light {
     @include portfolio-card-base-style();
     color: $light-text;
@@ -160,6 +167,7 @@
     height: 250px;
     object-fit: cover;
     margin-bottom: 10px;
+    opacity: 1 !important;
   }
 
   .stack {
