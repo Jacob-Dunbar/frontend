@@ -10,10 +10,25 @@ export default function Model({ ...props }) {
   const [hovered, setHovered] = useState(false);
   const [clicked, setClicked] = useState(false);
 
+  // Set state for if on mobile or desktop
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 415);
+
+  // Function to change state of isMobile
+  const updateIsMobile = () => {
+    setIsMobile(window.innerWidth < 415);
+    console.log(isMobile);
+  };
+
+  // Add event listener for screen resize and run updateIsMobile, plus cleanup.
+
+  useEffect(() => {
+    window.addEventListener("resize", updateIsMobile);
+    return () => window.removeEventListener("resize", updateIsMobile);
+  });
+
   // useSpring to animate head spin when headClicked state set to true onClick
 
   const spring = useSpring({
-    color: clicked ? "#white" : "white",
     intensity: clicked ? 0.15 : 0.075,
   });
 
@@ -24,10 +39,12 @@ export default function Model({ ...props }) {
   // useFrame to move the point light (lightRef) to the mouse location before every render.
 
   useFrame(({ mouse }) => {
-    const x = (mouse.x * viewport.width) / 2;
-    const y = (mouse.y * viewport.height) / 2;
-    lightRef.current.position.set(x, y, 1);
-    lightRef.current.rotation.set(-y, x, 0);
+    if (!isMobile) {
+      const x = (mouse.x * viewport.width) / 2;
+      const y = (mouse.y * viewport.height) / 2;
+      lightRef.current.position.set(x, y, 1);
+      lightRef.current.rotation.set(-y, x, 0);
+    }
   });
 
   // Listen for change in hovered state and change mouse to pointer
@@ -43,7 +60,8 @@ export default function Model({ ...props }) {
         distance={20}
         decay={2}
         intensity={spring.intensity}
-        color={spring.color}
+        color={"#d5fdeb"}
+        position={[0, 0, 1]}
       />
 
       <Float speed={6} rotationIntensity={0.5} floatIntensity={0.5}>
