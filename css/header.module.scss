@@ -146,6 +146,7 @@
 
 .emailbtn_light {
   @include button($light-primary, $light-background, transparent);
+  border: none;
 }
 
 .linkedinbtn_light {

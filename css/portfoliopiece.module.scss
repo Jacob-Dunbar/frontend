@@ -107,6 +107,7 @@
   @include button($dark-primary, $dark-background, transparent);
   padding: 6px 12px;
   font-size: 0.8rem;
+  border: none;
 }
 
 .btn_github_dark {
@@ -120,6 +121,7 @@
   @include button(transparent, $dark-primary, transparent);
   font-size: 0.8rem;
   padding: 6px 12px;
+  border: none;
 }
 
 //light
@@ -128,6 +130,7 @@
   @include button($light-primary, $light-background, none);
   padding: 6px 12px;
   font-size: 0.8rem;
+  border: none;
 }
 
 .btn_github_light {
@@ -141,6 +144,7 @@
   @include button(transparent, $light-primary, none);
   font-size: 0.8rem;
   padding: 6px 12px;
+  border: none;
 }
 
 //mobile styles
