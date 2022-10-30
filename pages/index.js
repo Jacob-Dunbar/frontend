@@ -8,6 +8,7 @@ import Portfolio from "../components/Portfolio.js";
 import ScrollToTop from "../components/ScrollToTop.js";
 import ScrollDown from "../components/ScrollDown.js";
 import Background from "../components/Background.js";
+import Footer from "../components/Footer.js";
 
 // strapi CMS
 
@@ -108,6 +109,8 @@ export default function Home({ data }) {
       <Contact darkMode={darkMode} />
 
       <Background darkMode={darkMode} />
+
+      <Footer darkMode={darkMode} />
     </div>
   );
 }

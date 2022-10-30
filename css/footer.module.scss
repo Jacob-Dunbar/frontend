@@ -1,0 +1,35 @@
+@import "variables";
+
+.footer {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba($dark-background2, 0.2);
+  font-family: $font-secondary;
+
+  .p_dark {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    color: $dark-primary;
+  }
+  .p_light {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    color: $light-text;
+  }
+
+  .icon_container {
+    display: flex;
+    gap: 10px;
+    margin-block: 10px;
+
+    .icon {
+      width: 30px;
+    }
+  }
+}
