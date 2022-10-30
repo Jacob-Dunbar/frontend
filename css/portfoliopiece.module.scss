@@ -107,7 +107,6 @@
   @include button($dark-primary, $dark-background, transparent);
   padding: 6px 12px;
   font-size: 0.8rem;
-  border: none;
 }
 
 .btn_github_dark {
@@ -121,16 +120,14 @@
   @include button(transparent, $dark-primary, transparent);
   font-size: 0.8rem;
   padding: 6px 12px;
-  border: none;
 }
 
 //light
 
 .btn_livesite_light {
-  @include button($light-primary, $light-background, none);
+  @include button($light-primary, $light-background, transparent);
   padding: 6px 12px;
   font-size: 0.8rem;
-  border: none;
 }
 
 .btn_github_light {
@@ -141,7 +138,7 @@
 
 .btn_figma_light {
   margin-left: auto;
-  @include button(transparent, $light-primary, none);
+  @include button(transparent, $light-primary, transparent);
   font-size: 0.8rem;
   padding: 6px 12px;
   border: none;
