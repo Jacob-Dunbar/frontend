@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import Face from "./Face3";
 import css from "../css/header.module.scss";
 import Skull from "./Skull.js";
+import Image from "next/image";
 
 export default function ThreeHeader(props) {
   const nextjsIcon = "/icons/nextjs.svg";
@@ -91,6 +92,7 @@ export default function ThreeHeader(props) {
             src={props.darkMode ? blenderIcon_dark : blenderIcon}
             alt="blender"
           />
+
           <img
             className={css.icon}
             src={props.darkMode ? figmaIcon_dark : figmaIcon}
@@ -114,7 +116,7 @@ export default function ThreeHeader(props) {
             src={
               props.darkMode ? "/icons/mail_dark.svg" : "/icons/mail_light.svg"
             }
-            alt=""
+            alt="mail"
           />
         </button>
         <button
@@ -128,7 +130,7 @@ export default function ThreeHeader(props) {
             src={
               props.darkMode ? "/icons/github_dark.svg" : "/icons/github.svg"
             }
-            alt=""
+            alt="mail"
           />
         </button>
       </div>
