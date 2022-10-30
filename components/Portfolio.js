@@ -31,7 +31,7 @@ function Portfolio(props) {
       {portfolioElements}
 
       {/* foreground blobs */}
-      <div className={css.blob_container}>
+      {/* <div className={css.blob_container}>
         <img
           className={css.blob2_light}
           src={props.darkMode ? "/blobs/blob2_d.svg" : "/blobs/blob2_l.svg"}
@@ -42,7 +42,7 @@ function Portfolio(props) {
           src={props.darkMode ? "/blobs/blob3_d.svg" : "/blobs/blob3_l.svg"}
           alt="foreground blob"
         />
-      </div>
+      </div> */}
     </section>
   );
 }

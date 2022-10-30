@@ -7,6 +7,7 @@ import { useState, useRef } from "react";
 import Portfolio from "../components/Portfolio.js";
 import ScrollToTop from "../components/ScrollToTop.js";
 import ScrollDown from "../components/ScrollDown.js";
+import Background from "../components/Background.js";
 
 // strapi CMS
 
@@ -101,6 +102,8 @@ export default function Home({ data }) {
 
       <div ref={contactSection}></div>
       <Contact darkMode={darkMode} />
+
+      <Background darkMode={darkMode} />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import Face from "./Face2.js";
+import Face from "./Face2";
 import css from "../css/header.module.scss";
 import Skull from "./Skull.js";
 
@@ -9,7 +9,7 @@ export default function ThreeHeader(props) {
     <div className={css.home}>
       {/* foreground blobs */}
 
-      <div className={css.blob_container}>
+      {/* <div className={css.blob_container}>
         <img
           className={css.blob1_light}
           src={props.darkMode ? "/blobs/blob1_d.svg" : "/blobs/blob1_l.svg"}
@@ -18,14 +18,13 @@ export default function ThreeHeader(props) {
         <div
           className={props.darkMode ? css.blob2_dark : css.blob2_light}
         ></div>
-      </div>
+      </div> */}
 
       {/* light mode face model */}
 
       <Canvas className={!props.darkMode ? css.show : css.hidden}>
         <Suspense fallback={null}>
           <ambientLight intensity={0.4} />
-
           <spotLight
             intensity={0.7}
             angle={0.7}
