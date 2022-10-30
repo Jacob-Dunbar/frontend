@@ -29,20 +29,6 @@ function Portfolio(props) {
         Portfolio
       </h1>
       {portfolioElements}
-
-      {/* foreground blobs */}
-      {/* <div className={css.blob_container}>
-        <img
-          className={css.blob2_light}
-          src={props.darkMode ? "/blobs/blob2_d.svg" : "/blobs/blob2_l.svg"}
-          alt="foreground blob"
-        />
-        <img
-          className={css.blob1_light}
-          src={props.darkMode ? "/blobs/blob3_d.svg" : "/blobs/blob3_l.svg"}
-          alt="foreground blob"
-        />
-      </div> */}
     </section>
   );
 }

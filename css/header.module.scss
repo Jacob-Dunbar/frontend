@@ -52,44 +52,6 @@
   height: 90vh;
 }
 
-// Foreground Blobs
-
-.blob_container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-
-  .blob1_light {
-    position: absolute;
-    top: 10%;
-    left: -20%;
-    width: 70%;
-    min-width: 500px;
-    opacity: 0.4;
-  }
-
-  .blob2_light {
-    @include blob(rgba($light-primary, 0.1));
-    right: -10%;
-    top: -20%;
-    width: 40%;
-  }
-
-  .blob1_dark {
-    @include blob(rgba($dark-primary, 0.05));
-    right: -10%;
-    top: -30%;
-    width: 35%;
-  }
-
-  .blob2_dark {
-    @include blob(rgba($dark-primary, 0.05));
-    right: -10%;
-    top: -20%;
-    width: 40%;
-  }
-}
-
 // Show and hide three.header
 
 .hidden {

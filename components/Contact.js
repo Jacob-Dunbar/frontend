@@ -178,17 +178,6 @@ function Contact(props) {
           </button>
         </p>
       </form>
-
-      {/* foreground blobs */}
-
-      {/* <div className={css.blob_container}>
-        <div
-          className={props.darkMode ? css.blob1_dark : css.blob1_light}
-        ></div>
-        <div
-          className={props.darkMode ? css.blob2_dark : css.blob2_light}
-        ></div>
-      </div> */}
     </div>
   );
 }
