@@ -26,7 +26,7 @@ function Portfolio(props) {
     <section className={css.portfolio}>
       {/* portfolio section */}
       <h1 className={props.darkMode ? css.heading_dark : css.heading_light}>
-        Portfolio
+        -- Portfolio --
       </h1>
       {portfolioElements}
     </section>

@@ -127,7 +127,7 @@ function Contact(props) {
     <div className={css.contact}>
       {/* contact section */}
       <h1 className={props.darkMode ? css.heading_dark : css.heading_light}>
-        Contact
+        -- Contact --
       </h1>
       <form
         className={props.darkMode ? css.form_dark : css.form_light}

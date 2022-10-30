@@ -5,6 +5,24 @@ import css from "../css/header.module.scss";
 import Skull from "./Skull.js";
 
 export default function ThreeHeader(props) {
+  const nextjsIcon = "/icons/nextjs.svg";
+  const reactIcon = "/icons/react.svg";
+  const sassIcon = "/icons/sass.svg";
+
+  const threejsIcon = "/icons/threejs.svg";
+  const blenderIcon = "/icons/blender.svg";
+  const figmaIcon = "/icons/figma.svg";
+  const gitIcon = "/icons/git.svg";
+
+  const nextjsIcon_dark = "/icons/nextjs_dark.svg";
+  const reactIcon_dark = "/icons/react_dark.svg";
+  const sassIcon_dark = "/icons/sass_dark.svg";
+
+  const threejsIcon_dark = "/icons/threejs_dark.svg";
+  const blenderIcon_dark = "/icons/blender_dark.svg";
+  const figmaIcon_dark = "/icons/figma_dark.svg";
+  const gitIcon_dark = "/icons/git_dark.svg";
+
   return (
     <div className={css.home}>
       {/* light mode face model */}
@@ -39,14 +57,49 @@ export default function ThreeHeader(props) {
         <h1>Jacob Dunbar</h1>
         <h2>Web Developer</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus,
-          curabitur ornare etiam scelerisque fames mauris donec rhoncus. Erat
-          lectus est nisl eget tellus egestas enim massa. Morbi amet sit
-          pretium, sit.
+          My name is Jacob, and I'm a code addict. My weapons of choice include:
         </p>
+        <div className={css.devicons}>
+          <img
+            className={css.icon}
+            src={props.darkMode ? gitIcon_dark : gitIcon}
+            alt="git"
+          />
+          <img
+            className={css.icon}
+            src={props.darkMode ? reactIcon_dark : reactIcon}
+            alt="react"
+          />
+          <img
+            className={css.icon}
+            src={props.darkMode ? nextjsIcon_dark : nextjsIcon}
+            alt="nextjs"
+          />
+          <img
+            className={css.icon}
+            src={props.darkMode ? sassIcon_dark : sassIcon}
+            alt="sass"
+          />
+          <img
+            className={css.icon}
+            src={props.darkMode ? threejsIcon_dark : threejsIcon}
+            alt="threejs"
+          />
+          <img
+            className={css.icon}
+            src={props.darkMode ? blenderIcon_dark : blenderIcon}
+            alt="blender"
+          />
+          <img
+            className={css.icon}
+            src={props.darkMode ? figmaIcon_dark : figmaIcon}
+            alt="figma"
+          />
+        </div>
         <p>
-          Tellus, curabitur ornare etiam scelerisque fames mauris donec rhoncus.
-          Erat lectus est nisl eget tellus egestas enim
+          My background in illustration, UX design and set building have honed
+          my creativity and problem-solving skills. I am passionate about using
+          these skills to craft engaging online experiences.
         </p>
       </section>
       <div className={css.buttons}>
