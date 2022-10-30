@@ -104,7 +104,7 @@
 //dark
 
 .btn_livesite_dark {
-  @include button($dark-primary, $dark-background, none);
+  @include button($dark-primary, $dark-background, transparent);
   padding: 6px 12px;
   font-size: 0.8rem;
 }
@@ -117,7 +117,7 @@
 
 .btn_figma_dark {
   margin-left: auto;
-  @include button(transparent, $dark-primary, none);
+  @include button(transparent, $dark-primary, transparent);
   font-size: 0.8rem;
   padding: 6px 12px;
 }

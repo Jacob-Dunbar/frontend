@@ -145,7 +145,7 @@
 // Buttons light mode
 
 .emailbtn_light {
-  @include button($light-primary, $light-background, none);
+  @include button($light-primary, $light-background, transparent);
 }
 
 .linkedinbtn_light {
@@ -155,7 +155,7 @@
 // Buttons dark
 
 .emailbtn_dark {
-  @include button($dark-primary, $dark-background, none);
+  @include button($dark-primary, $dark-background, transparent);
 }
 
 .linkedinbtn_dark {
