@@ -106,7 +106,7 @@
 .btn_livesite_dark {
   @include button($dark-primary, $dark-background, transparent);
   padding: 6px 12px;
-  font-size: 0.8rem;
+  font-size: 0.8rtransparent;
 }
 
 .btn_github_dark {
@@ -187,7 +187,7 @@
   }
 
   .btn_livesite_dark {
-    @include button($dark-primary, $dark-background, none);
+    @include button($dark-primary, $dark-background, transparent);
     padding: 7px 14px;
     font-size: 0.7rem;
     margin-bottom: 10px;
@@ -202,7 +202,7 @@
 
   .btn_figma_dark {
     margin-left: auto;
-    @include button(transparent, $dark-primary, none);
+    @include button(transparent, $dark-primary, transparent);
     padding: 7px 14px;
     font-size: 0.7rem;
     margin-right: -5px;
@@ -210,7 +210,7 @@
   }
 
   .btn_livesite_light {
-    @include button($light-primary, $light-background, none);
+    @include button($light-primary, $light-background, transparent);
     padding: 7px 14px;
     font-size: 0.7rem;
     margin-bottom: 10px;
@@ -225,7 +225,7 @@
 
   .btn_figma_light {
     margin-left: auto;
-    @include button(transparent, $light-primary, none);
+    @include button(transparent, $light-primary, transparent);
     padding: 7px 14px;
     font-size: 0.7rem;
     margin-right: -5px;
