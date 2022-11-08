@@ -108,7 +108,7 @@ function PortfolioPiece(props) {
     } else if (item === "figma") {
       return (
         <img
-          src={props.darkMode ? thfigmaIcon_dark : thfigmaIcon}
+          src={props.darkMode ? figmaIcon_dark : figmaIcon}
           key={item}
           className={css.stack_item}
         />
