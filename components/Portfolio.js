@@ -5,6 +5,7 @@ function Portfolio(props) {
   // Create array of portfolio peice components by mapping over strapi data and reversing order so that most recent at the top
 
   const portfolioElements = props.data.portfoliopieces.data
+    .sort((a, b) => a.id - b.id)
     .map((piece) => {
       return (
         <PortfolioPiece
@@ -21,6 +22,8 @@ function Portfolio(props) {
       );
     })
     .reverse();
+
+  console.log(props.data.portfoliopieces.data);
 
   return (
     <section className={css.portfolio}>
