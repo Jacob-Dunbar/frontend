@@ -232,3 +232,16 @@
     margin-bottom: 10px;
   }
 }
+
+.bold {
+  font-weight: 600;
+}
+
+.techItem_light {
+  border: 2px solid rgba($light-primary, 0.7);
+  padding: 1px 5px;
+  color: rgba($light-primary, 0.7);
+  border-radius: 4px;
+  font-size: smaller;
+  font-family: "inter";
+}

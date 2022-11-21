@@ -13,6 +13,10 @@ const threejsIcon = "/icons/threejs.svg";
 const blenderIcon = "/icons/blender.svg";
 const figmaIcon = "/icons/figma.svg";
 const gitIcon = "/icons/git.svg";
+const framerIcon = "/icons/framer.svg";
+const stripeIcon = "/icons/stripe.svg";
+const strapiIcon = "/icons/strapi.svg";
+const sanityIcon = "/icons/sanity.svg";
 
 const cssIcon_dark = "/icons/css_dark.svg";
 const htmlIcon_dark = "/icons/html_dark.svg";
@@ -25,6 +29,10 @@ const threejsIcon_dark = "/icons/threejs_dark.svg";
 const blenderIcon_dark = "/icons/blender_dark.svg";
 const figmaIcon_dark = "/icons/figma_dark.svg";
 const gitIcon_dark = "/icons/git_dark.svg";
+const framerIcon_dark = "/icons/framer_dark.svg";
+const stripeIcon_dark = "/icons/stripe_dark.svg";
+const strapiIcon_dark = "/icons/strapi_dark.svg";
+const sanityIcon_dark = "/icons/sanity_dark.svg";
 
 function PortfolioPiece(props) {
   const imageUrl = props.image.data[0].attributes.url;
@@ -33,7 +41,7 @@ function PortfolioPiece(props) {
   // Create array of tech badges for JSON data from strapi
 
   const stackElements = techStack.map((item) => {
-    if (item === "html") {
+    if (item === "HTML") {
       return (
         <img
           src={props.darkMode ? htmlIcon_dark : htmlIcon}
@@ -41,7 +49,7 @@ function PortfolioPiece(props) {
           className={css.stack_item}
         />
       );
-    } else if (item === "css") {
+    } else if (item === "CSS") {
       return (
         <img
           src={props.darkMode ? cssIcon_dark : cssIcon}
@@ -49,7 +57,7 @@ function PortfolioPiece(props) {
           className={css.stack_item}
         />
       );
-    } else if (item === "react") {
+    } else if (item === "React") {
       return (
         <img
           src={props.darkMode ? reactIcon_dark : reactIcon}
@@ -57,7 +65,7 @@ function PortfolioPiece(props) {
           className={css.stack_item}
         />
       );
-    } else if (item === "nextjs") {
+    } else if (item === "Next.js") {
       return (
         <img
           src={props.darkMode ? nextjsIcon_dark : nextjsIcon}
@@ -65,7 +73,7 @@ function PortfolioPiece(props) {
           className={css.stack_item}
         />
       );
-    } else if (item === "javascript") {
+    } else if (item === "JavaScript") {
       return (
         <img
           src={props.darkMode ? javascriptIcon_dark : javascriptIcon}
@@ -73,7 +81,7 @@ function PortfolioPiece(props) {
           className={css.stack_item}
         />
       );
-    } else if (item === "sass") {
+    } else if (item === "SASS") {
       return (
         <img
           src={props.darkMode ? sassIcon_dark : sassIcon}
@@ -81,7 +89,7 @@ function PortfolioPiece(props) {
           className={css.stack_item}
         />
       );
-    } else if (item === "tailwind") {
+    } else if (item === "Tailwind") {
       return (
         <img
           src={props.darkMode ? tailwindIcon_dark : tailwindIcon}
@@ -89,7 +97,7 @@ function PortfolioPiece(props) {
           className={css.stack_item}
         />
       );
-    } else if (item === "three") {
+    } else if (item === "Three") {
       return (
         <img
           src={props.darkMode ? threejsIcon_dark : threejsIcon}
@@ -97,7 +105,7 @@ function PortfolioPiece(props) {
           className={css.stack_item}
         />
       );
-    } else if (item === "blender") {
+    } else if (item === "Blender") {
       return (
         <img
           src={props.darkMode ? blenderIcon_dark : blenderIcon}
@@ -105,7 +113,7 @@ function PortfolioPiece(props) {
           className={css.stack_item}
         />
       );
-    } else if (item === "figma") {
+    } else if (item === "Figma") {
       return (
         <img
           src={props.darkMode ? figmaIcon_dark : figmaIcon}
@@ -121,7 +129,47 @@ function PortfolioPiece(props) {
           className={css.stack_item}
         />
       );
+    } else if (item === "Framer Motion") {
+      return (
+        <img
+          src={props.darkMode ? framerIcon_dark : framerIcon}
+          key={item}
+          className={css.stack_item}
+        />
+      );
+    } else if (item === "Sanity.io") {
+      return (
+        <img
+          src={props.darkMode ? sanityIcon_dark : sanityIcon}
+          key={item}
+          className={css.stack_item}
+        />
+      );
+    } else if (item === "Strapi") {
+      return (
+        <img
+          src={props.darkMode ? strapiIcon_dark : strapiIcon}
+          key={item}
+          className={css.stack_item}
+        />
+      );
+    } else if (item === "Stripe") {
+      return (
+        <img
+          src={props.darkMode ? stripeIcon_dark : stripeIcon}
+          key={item}
+          className={css.stack_item}
+        />
+      );
     }
+  });
+
+  const stackElements2 = techStack.map((item) => {
+    return (
+      <div className={props.darkMode ? css.techItem_dark : css.techItem_light}>
+        <h5 className={css.bold}>{item}</h5>
+      </div>
+    );
   });
 
   return (

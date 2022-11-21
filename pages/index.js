@@ -24,6 +24,7 @@ export async function getStaticProps(context) {
       query: `{
         portfoliopieces{
           data{
+            id
             attributes{
               title
               description
