@@ -1,4 +1,7 @@
 import css from "../css/portfoliopiece.module.scss";
+import ReactTooltip from "react-tooltip";
+import ReactMarkdown from "react-markdown";
+import gfm from "remark-gfm";
 
 // Techstack badge svg paths
 
@@ -17,6 +20,7 @@ const framerIcon = "/icons/framer.svg";
 const stripeIcon = "/icons/stripe.svg";
 const strapiIcon = "/icons/strapi.svg";
 const sanityIcon = "/icons/sanity.svg";
+const authIcon = "/icons/auth.svg";
 
 const cssIcon_dark = "/icons/css_dark.svg";
 const htmlIcon_dark = "/icons/html_dark.svg";
@@ -33,6 +37,7 @@ const framerIcon_dark = "/icons/framer_dark.svg";
 const stripeIcon_dark = "/icons/stripe_dark.svg";
 const strapiIcon_dark = "/icons/strapi_dark.svg";
 const sanityIcon_dark = "/icons/sanity_dark.svg";
+const authIcon_dark = "/icons/auth_dark.svg";
 
 function PortfolioPiece(props) {
   const imageUrl = props.image.data[0].attributes.url;
@@ -47,6 +52,7 @@ function PortfolioPiece(props) {
           src={props.darkMode ? htmlIcon_dark : htmlIcon}
           key={item}
           className={css.stack_item}
+          data-tip={item}
         />
       );
     } else if (item === "CSS") {
@@ -55,6 +61,7 @@ function PortfolioPiece(props) {
           src={props.darkMode ? cssIcon_dark : cssIcon}
           key={item}
           className={css.stack_item}
+          data-tip={item}
         />
       );
     } else if (item === "React") {
@@ -63,6 +70,7 @@ function PortfolioPiece(props) {
           src={props.darkMode ? reactIcon_dark : reactIcon}
           key={item}
           className={css.stack_item}
+          data-tip={item}
         />
       );
     } else if (item === "Next.js") {
@@ -71,6 +79,7 @@ function PortfolioPiece(props) {
           src={props.darkMode ? nextjsIcon_dark : nextjsIcon}
           key={item}
           className={css.stack_item}
+          data-tip={item}
         />
       );
     } else if (item === "JavaScript") {
@@ -79,6 +88,7 @@ function PortfolioPiece(props) {
           src={props.darkMode ? javascriptIcon_dark : javascriptIcon}
           key={item}
           className={css.stack_item}
+          data-tip={item}
         />
       );
     } else if (item === "SASS") {
@@ -87,6 +97,7 @@ function PortfolioPiece(props) {
           src={props.darkMode ? sassIcon_dark : sassIcon}
           key={item}
           className={css.stack_item}
+          data-tip={item}
         />
       );
     } else if (item === "Tailwind") {
@@ -95,6 +106,7 @@ function PortfolioPiece(props) {
           src={props.darkMode ? tailwindIcon_dark : tailwindIcon}
           key={item}
           className={css.stack_item}
+          data-tip={item}
         />
       );
     } else if (item === "Three") {
@@ -103,14 +115,16 @@ function PortfolioPiece(props) {
           src={props.darkMode ? threejsIcon_dark : threejsIcon}
           key={item}
           className={css.stack_item}
+          data-tip={item}
         />
       );
-    } else if (item === "Blender") {
+    } else if (item === "Blender 3D") {
       return (
         <img
           src={props.darkMode ? blenderIcon_dark : blenderIcon}
           key={item}
           className={css.stack_item}
+          data-tip={item}
         />
       );
     } else if (item === "Figma") {
@@ -119,6 +133,7 @@ function PortfolioPiece(props) {
           src={props.darkMode ? figmaIcon_dark : figmaIcon}
           key={item}
           className={css.stack_item}
+          data-tip={item}
         />
       );
     } else if (item === "git") {
@@ -127,6 +142,7 @@ function PortfolioPiece(props) {
           src={props.darkMode ? gitIcon_dark : gitIcon}
           key={item}
           className={css.stack_item}
+          data-tip={item}
         />
       );
     } else if (item === "Framer Motion") {
@@ -135,30 +151,43 @@ function PortfolioPiece(props) {
           src={props.darkMode ? framerIcon_dark : framerIcon}
           key={item}
           className={css.stack_item}
+          data-tip={item}
         />
       );
-    } else if (item === "Sanity.io") {
+    } else if (item === "Sanity CMS") {
       return (
         <img
           src={props.darkMode ? sanityIcon_dark : sanityIcon}
           key={item}
           className={css.stack_item}
+          data-tip={item}
         />
       );
-    } else if (item === "Strapi") {
+    } else if (item === "Strapi CMS") {
       return (
         <img
           src={props.darkMode ? strapiIcon_dark : strapiIcon}
           key={item}
           className={css.stack_item}
+          data-tip={item}
         />
       );
-    } else if (item === "Stripe") {
+    } else if (item === "Stripe Payments") {
       return (
         <img
           src={props.darkMode ? stripeIcon_dark : stripeIcon}
           key={item}
           className={css.stack_item}
+          data-tip={item}
+        />
+      );
+    } else if (item === "Auth0") {
+      return (
+        <img
+          src={props.darkMode ? authIcon_dark : authIcon}
+          key={item}
+          className={css.stack_item}
+          data-tip={item}
         />
       );
     }
@@ -178,19 +207,22 @@ function PortfolioPiece(props) {
         props.darkMode ? css.portfolioCard_dark : css.portfolioCard_light
       }
     >
+      <ReactTooltip className={css.tooltip} />
       <img className={css.thumbnail} src={imageUrl} alt="thumbnail" />
       <div className={css.body}>
         <h1>{props.title}</h1>
-        <p>{props.description}</p>
+        <ReactMarkdown remarkPlugins={[gfm]} children={props.description} />
         <div className={css.stack}>{stackElements}</div>
         <div className={css.buttons}>
-          <button
-            className={
-              props.darkMode ? css.btn_livesite_dark : css.btn_livesite_light
-            }
-          >
-            <a href={props.livesite}>Live Site</a>
-          </button>
+          {props.livesite !== "null" && (
+            <button
+              className={
+                props.darkMode ? css.btn_livesite_dark : css.btn_livesite_light
+              }
+            >
+              <a href={props.livesite}>Live Site</a>
+            </button>
+          )}
           <button
             className={
               props.darkMode ? css.btn_github_dark : css.btn_github_light
@@ -213,5 +245,3 @@ function PortfolioPiece(props) {
 }
 
 export default PortfolioPiece;
-
-// {`../public/${techStack[1]}.svg`}

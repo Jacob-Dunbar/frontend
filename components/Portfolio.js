@@ -12,7 +12,7 @@ function Portfolio(props) {
           darkMode={props.darkMode}
           key={piece.attributes.title}
           title={piece.attributes.title}
-          description={piece.attributes.description}
+          description={piece.attributes.details}
           techstack={piece.attributes.techstack}
           livesite={piece.attributes.livesite}
           repo={piece.attributes.repo}
