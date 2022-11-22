@@ -211,7 +211,7 @@ function PortfolioPiece(props) {
       <img className={css.thumbnail} src={imageUrl} alt="thumbnail" />
       <div className={css.body}>
         <h1>{props.title}</h1>
-        <ReactMarkdown remarkPlugins={[gfm]} children={props.description} />
+        <ReactMarkdown remarkPlugins={[gfm]}>{props.description}</ReactMarkdown>
         <div className={css.stack}>{stackElements}</div>
         <div className={css.buttons}>
           {props.livesite !== "null" && (

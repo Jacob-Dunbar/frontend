@@ -161,6 +161,10 @@
     background-color: rgba($dark-background2, 0.5);
     flex-direction: column;
     width: 100%;
+
+    p {
+      margin-top: 10px;
+    }
   }
 
   .thumbnail {

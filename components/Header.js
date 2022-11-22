@@ -3,22 +3,25 @@ import { Suspense } from "react";
 import Face from "./Face3";
 import css from "../css/header.module.scss";
 import Skull from "./Skull.js";
-import Image from "next/image";
+
+import ReactTooltip from "react-tooltip";
 
 export default function ThreeHeader(props) {
+  const javascriptIcon = "/icons/javascript.svg";
   const nextjsIcon = "/icons/nextjs.svg";
   const reactIcon = "/icons/react.svg";
   const sassIcon = "/icons/sass.svg";
-
+  const tailwindIcon = "/icons/tailwind.svg";
   const threejsIcon = "/icons/threejs.svg";
   const blenderIcon = "/icons/blender.svg";
   const figmaIcon = "/icons/figma.svg";
   const gitIcon = "/icons/git.svg";
 
+  const javascriptIcon_dark = "/icons/javascript_dark.svg";
   const nextjsIcon_dark = "/icons/nextjs_dark.svg";
   const reactIcon_dark = "/icons/react_dark.svg";
   const sassIcon_dark = "/icons/sass_dark.svg";
-
+  const tailwindIcon_dark = "/icons/tailwind_dark.svg";
   const threejsIcon_dark = "/icons/threejs_dark.svg";
   const blenderIcon_dark = "/icons/blender_dark.svg";
   const figmaIcon_dark = "/icons/figma_dark.svg";
@@ -26,8 +29,9 @@ export default function ThreeHeader(props) {
 
   return (
     <div className={css.home}>
-      {/* light mode face model */}
+      <ReactTooltip className={css.tooltip} />
 
+      {/* light mode face model */}
       <Canvas className={!props.darkMode ? css.show : css.hidden}>
         <Suspense fallback={null}>
           <ambientLight intensity={0.4} />
@@ -43,68 +47,145 @@ export default function ThreeHeader(props) {
           <Face scale={[0.5, 0.5, 0.5]} />
         </Suspense>
       </Canvas>
-
       {/* dark mode skull model */}
-
       <Canvas className={props.darkMode ? css.show : css.hidden}>
         <Suspense fallback={null}>
           <Skull />
         </Suspense>
       </Canvas>
-
-      {/* about me section */}
-
-      <section className={props.darkMode ? css.text_dark : css.text_light}>
+      {/* about me section mobile */}
+      <section
+        className={
+          props.darkMode ? css.text_dark_mobile : css.text_light_mobile
+        }
+      >
         <h1>Jacob Dunbar</h1>
         <h2>Web Developer</h2>
-        {/* <p>
-          My name is Jacob, and I am a code addict. My weapons of choice
-          include:
+        <p>
+          My name is Jacob and I am a front end / web developer. My tools of
+          choice include:
         </p>
         <div className={css.devicons}>
           <img
-            className={css.icon}
             src={props.darkMode ? gitIcon_dark : gitIcon}
-            alt="git"
+            className={css.stack_item}
+            data-tip="git"
           />
           <img
-            className={css.icon}
             src={props.darkMode ? reactIcon_dark : reactIcon}
-            alt="react"
+            className={css.stack_item}
+            data-tip="React"
           />
           <img
-            className={css.icon}
             src={props.darkMode ? nextjsIcon_dark : nextjsIcon}
-            alt="nextjs"
+            className={css.stack_item}
+            data-tip="Next.js"
           />
           <img
-            className={css.icon}
             src={props.darkMode ? sassIcon_dark : sassIcon}
-            alt="sass"
+            className={css.stack_item}
+            data-tip="Sass"
           />
           <img
-            className={css.icon}
+            src={props.darkMode ? tailwindIcon_dark : tailwindIcon}
+            className={css.stack_item}
+            data-tip="Tailwind"
+          />
+          <img
             src={props.darkMode ? threejsIcon_dark : threejsIcon}
-            alt="threejs"
+            className={css.stack_item}
+            data-tip="Three.js"
           />
           <img
-            className={css.icon}
             src={props.darkMode ? blenderIcon_dark : blenderIcon}
-            alt="blender"
+            className={css.stack_item}
+            data-tip="Blender 3D"
+          />
+          <img
+            src={props.darkMode ? javascriptIcon_dark : javascriptIcon}
+            className={css.stack_item}
+            data-tip="Javascript"
           />
 
           <img
-            className={css.icon}
             src={props.darkMode ? figmaIcon_dark : figmaIcon}
-            alt="figma"
+            className={css.stack_item}
+            data-tip="Figma"
           />
-        </div> */}
+        </div>
+
         <p>
-          My name is Jacob and I am a front end / web developer. I have a
-          background in illustration, UX design and set building and am
+          I have a background in illustration, UX design and set building and am
           passionate about crafting engaging online experiences.
         </p>
       </section>
+      {/* about me section desktop */}
+      <div className={css.devicons_desktop}>
+        <img
+          src={props.darkMode ? gitIcon_dark : gitIcon}
+          className={css.stack_item}
+          data-tip="git"
+        />
+        <img
+          src={props.darkMode ? reactIcon_dark : reactIcon}
+          className={css.stack_item}
+          data-tip="React"
+        />
+        <img
+          src={props.darkMode ? nextjsIcon_dark : nextjsIcon}
+          className={css.stack_item}
+          data-tip="Next.js"
+        />
+        <img
+          src={props.darkMode ? sassIcon_dark : sassIcon}
+          className={css.stack_item}
+          data-tip="Sass"
+        />
+        <img
+          src={props.darkMode ? tailwindIcon_dark : tailwindIcon}
+          className={css.stack_item}
+          data-tip="Tailwind"
+        />
+        <img
+          src={props.darkMode ? threejsIcon_dark : threejsIcon}
+          className={css.stack_item}
+          data-tip="Three.js"
+        />
+        <img
+          src={props.darkMode ? blenderIcon_dark : blenderIcon}
+          className={css.stack_item}
+          data-tip="Blender 3D"
+        />
+        <img
+          src={props.darkMode ? javascriptIcon_dark : javascriptIcon}
+          className={css.stack_item}
+          data-tip="Javascript"
+        />
+
+        <img
+          src={props.darkMode ? figmaIcon_dark : figmaIcon}
+          className={css.stack_item}
+          data-tip="Figma"
+        />
+      </div>
+      <section
+        className={
+          props.darkMode ? css.text_dark_desktop : css.text_light_desktop
+        }
+      >
+        <h1>Jacob Dunbar</h1>
+        <h2>Web Developer</h2>
+        <p className={css.z1}>
+          My name is Jacob and I am a front end / web developer. My tools of
+          choice include:
+        </p>
+
+        <p>
+          I have a background in illustration, UX design and set building and am
+          passionate about crafting engaging online experiences.
+        </p>
+      </section>
+
       <div className={css.buttons}>
         <button
           onClick={() => props.scrollToSection(props.contactSection)}

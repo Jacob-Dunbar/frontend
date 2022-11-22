@@ -28,17 +28,34 @@
     font-size: 0.9rem;
     opacity: 0.8;
   }
+}
 
-  .devicons {
-    display: flex;
-    gap: 15px;
+.z1 {
+  margin-bottom: 5vh;
+}
 
-    .icon {
-      width: 25px;
-    }
+.devicons {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+
+  .icon {
+    width: 25px;
   }
 }
 
+.devicons_desktop {
+  position: absolute;
+  bottom: 27.5vh;
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+
+  .icon {
+    width: 25px;
+  }
+}
 // Gradient heading
 
 @mixin gradient-heading($color1, $color2) {
@@ -74,8 +91,14 @@
 
 // Light mode text block
 
-.text_light {
+.text_light_mobile {
+  display: none;
+}
+
+.text_light_desktop {
   @include text-block();
+  position: absolute;
+  bottom: 21vh;
 
   h1 {
     font-family: $font-primary;
@@ -97,8 +120,14 @@
 
 // Dark mode text block
 
-.text_dark {
+.text_dark_mobile {
+  display: none;
+}
+
+.text_dark_desktop {
   @include text-block();
+  position: absolute;
+  bottom: 21vh;
 
   h1 {
     font-family: $font-primary;
@@ -142,6 +171,23 @@
   }
 }
 
+.tooltip {
+  font-family: "inter";
+}
+
+.stack_item {
+  max-width: 30px;
+  max-height: 35px;
+  filter: brightness(0.6);
+  opacity: 0.8;
+  z-index: 50;
+
+  &:hover {
+    filter: brightness(1);
+    opacity: 1;
+  }
+}
+
 // Buttons light mode
 
 .emailbtn_light {
@@ -167,5 +213,56 @@
 @media (max-width: 414px) {
   .home {
     height: 93vh;
+  }
+
+  .text_light_mobile {
+    display: block;
+    @include text-block();
+
+    h1 {
+      font-family: $font-primary;
+      color: $light-text;
+    }
+
+    h2 {
+      @include gradient-heading(
+        (darken($light-secondary, 10%)),
+        (lighten($light-secondary, 10%))
+      );
+    }
+
+    p {
+      font-family: $font-secondary;
+      color: $light-text;
+    }
+  }
+  .text_dark_mobile {
+    display: block;
+    @include text-block();
+
+    h1 {
+      font-family: $font-primary;
+      color: $dark-text;
+    }
+
+    h2 {
+      @include gradient-heading((darken($dark-primary, 20%)), $dark-primary);
+    }
+
+    p {
+      font-family: $font-secondary;
+      color: $dark-text;
+    }
+  }
+
+  .text_light_desktop {
+    display: none;
+  }
+  .text_dark_desktop {
+    display: none;
+  }
+
+  .devicons_desktop {
+    display: none;
   }
 }
