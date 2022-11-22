@@ -57,7 +57,7 @@ export default function ThreeHeader(props) {
       <section className={props.darkMode ? css.text_dark : css.text_light}>
         <h1>Jacob Dunbar</h1>
         <h2>Web Developer</h2>
-        <p>
+        {/* <p>
           My name is Jacob, and I am a code addict. My weapons of choice
           include:
         </p>
@@ -98,11 +98,11 @@ export default function ThreeHeader(props) {
             src={props.darkMode ? figmaIcon_dark : figmaIcon}
             alt="figma"
           />
-        </div>
+        </div> */}
         <p>
-          My background in illustration, UX design and set building have honed
-          my creativity and problem-solving skills. I am passionate about using
-          these skills to craft engaging online experiences.
+          My name is Jacob and I am a front end / web developer. I have a
+          background in illustration, UX design and set building and am
+          passionate about crafting engaging online experiences.
         </p>
       </section>
       <div className={css.buttons}>
