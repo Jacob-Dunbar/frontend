@@ -193,9 +193,12 @@ function PortfolioPiece(props) {
     }
   });
 
-  const stackElements2 = techStack.map((item) => {
+  const stackElements2 = techStack.map((item, i) => {
     return (
-      <div className={props.darkMode ? css.techItem_dark : css.techItem_light}>
+      <div
+        key={i}
+        className={props.darkMode ? css.techItem_dark : css.techItem_light}
+      >
         <h5 className={css.bold}>{item}</h5>
       </div>
     );
