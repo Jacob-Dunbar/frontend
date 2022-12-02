@@ -61,8 +61,10 @@ export default function ThreeHeader(props) {
       >
         <h1>Jacob Dunbar</h1>
         <h2>Web Developer</h2>
-        <p>
-          My name is Jacob and I am a front end / web developer. My tools of
+        <p className={css.z2}>
+          My name is Jacob and I am a front end / web developer. I have a
+          background in illustration, UX design and set building and am
+          passionate about crafting engaging online experiences. My tools of
           choice include:
         </p>
         <div className={css.devicons}>
@@ -113,11 +115,6 @@ export default function ThreeHeader(props) {
             data-tip="Figma"
           />
         </div>
-
-        <p>
-          I have a background in illustration, UX design and set building and am
-          passionate about crafting engaging online experiences.
-        </p>
       </section>
       {/* about me section desktop */}
       <div className={css.devicons_desktop}>
