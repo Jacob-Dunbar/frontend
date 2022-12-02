@@ -23,7 +23,7 @@ function Navbar(props) {
           <Link href={"http://www.jacobdunbar-cv.com/"}> CV &gt; </Link>
         </li>
         <li className={props.darkMode ? css.cv_dark : css.cv_light}>
-          <Link href={"./jacobDunbarCV.pdf"} download>
+          <Link target="_blank" href={"./jacobDunbarCV.pdf"} download>
             CV &gt;
           </Link>
         </li>

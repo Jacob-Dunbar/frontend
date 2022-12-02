@@ -223,7 +223,9 @@ function PortfolioPiece(props) {
                 props.darkMode ? css.btn_livesite_dark : css.btn_livesite_light
               }
             >
-              <a href={props.livesite}>Live Site</a>
+              <a href={props.livesite} target="_blank">
+                Live Site
+              </a>
             </button>
           )}
           <button
@@ -231,7 +233,9 @@ function PortfolioPiece(props) {
               props.darkMode ? css.btn_github_dark : css.btn_github_light
             }
           >
-            <a href={props.repo}>Githib Repo</a>
+            <a href={props.repo} target="_blank">
+              Githib Repo
+            </a>
           </button>
           <button
             style={props.figma ? { display: "block" } : { display: "none" }}
@@ -239,7 +243,9 @@ function PortfolioPiece(props) {
               props.darkMode ? css.btn_figma_dark : css.btn_figma_light
             }
           >
-            <a href={props.figma}>Figma Design</a>
+            <a href={props.figma} target="_blank">
+              Figma Design
+            </a>
           </button>
         </div>
       </div>

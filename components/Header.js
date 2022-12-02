@@ -199,7 +199,9 @@ export default function ThreeHeader(props) {
             props.darkMode ? css.linkedinbtn_dark : css.linkedinbtn_light
           }
         >
-          <a href="https://github.com/Jacob-Dunbar">GitHub</a>
+          <a href="https://github.com/Jacob-Dunbar" target="_blank">
+            GitHub
+          </a>
           <img
             className={css.github_icon}
             src={
