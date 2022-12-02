@@ -1,4 +1,5 @@
 import css from "../css/navbar.module.scss";
+import Link from "next/link";
 
 function Navbar(props) {
   return (
@@ -17,6 +18,14 @@ function Navbar(props) {
         </li>
         <li onClick={() => props.scrollToSection(props.contactSection)}>
           Contact &gt;
+        </li>
+        <li>
+          <Link href={"http://www.jacobdunbar-cv.com/"}> CV &gt; </Link>
+        </li>
+        <li className={props.darkMode ? css.cv_dark : css.cv_light}>
+          <Link href={"./jacobDunbarCV.pdf"} download>
+            CV &gt;
+          </Link>
         </li>
       </ul>
     </nav>
