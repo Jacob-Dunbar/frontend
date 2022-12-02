@@ -16,7 +16,6 @@ export default function Model({ ...props }) {
   // Function to change state of isMobile
   const updateIsMobile = () => {
     setIsMobile(window.innerWidth < 415);
-    console.log(isMobile);
   };
 
   // Add event listener for screen resize and run updateIsMobile, plus cleanup.

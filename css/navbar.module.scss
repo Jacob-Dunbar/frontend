@@ -50,6 +50,10 @@
   }
 }
 
+.cv_light {
+  display: none;
+}
+
 // navbar dark
 
 .navbar_dark {
@@ -72,6 +76,10 @@
   }
 }
 
+.cv_dark {
+  display: none;
+}
+
 // mobile styles
 
 @media (max-width: 414px) {
@@ -90,10 +98,26 @@
       display: none;
     }
 
+    .cv_light {
+      display: block;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 30px;
+      right: 20px;
+      color: $dark-text;
+      background-color: $light-primary;
+      padding: 5px 12px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      padding-top: 7px;
+    }
+
     .darkmode_icon {
       position: absolute;
       top: 30px;
-      right: 10px;
+      left: 30px;
       display: block;
 
       .moon {
@@ -117,10 +141,26 @@
       display: none;
     }
 
+    .cv_dark {
+      display: block;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 30px;
+      right: 20px;
+      color: $light-text;
+      background-color: $dark-primary;
+      padding: 5px 12px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      padding-top: 7px;
+    }
+
     .darkmode_icon {
       position: absolute;
       top: 30px;
-      right: 10px;
+      left: 30px;
       display: block;
 
       .sun {

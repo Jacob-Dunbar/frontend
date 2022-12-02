@@ -23,8 +23,6 @@ function Portfolio(props) {
     })
     .reverse();
 
-  console.log(props.data.portfoliopieces.data);
-
   return (
     <section className={css.portfolio}>
       {/* portfolio section */}
