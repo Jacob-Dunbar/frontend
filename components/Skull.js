@@ -26,7 +26,7 @@ export default function Model({ ...props }) {
     return () => window.removeEventListener("resize", updateIsMobile);
   });
 
-  // useSpring to animate head spin when headClicked state set to true onClick
+  // useSpring to light change headClicked state set to true onClick
 
   const spring = useSpring({
     intensity: clicked ? 0.15 : 0.075,
