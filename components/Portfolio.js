@@ -14,7 +14,7 @@ function Portfolio({ darkMode, portfolioPieces }) {
           title={piece.name}
           description={piece.description}
           techstack={piece.tech}
-          livesite={piece.livesite}
+          livesite={piece.liveSite}
           repo={piece.github}
           image={piece.image}
           figma={piece.figma}
