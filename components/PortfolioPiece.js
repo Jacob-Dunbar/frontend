@@ -21,6 +21,13 @@ const stripeIcon = "/icons/stripe.svg";
 const strapiIcon = "/icons/strapi.svg";
 const sanityIcon = "/icons/sanity.svg";
 const authIcon = "/icons/auth.svg";
+const styledIcon = "/icons/styled.svg";
+const graphqlIcon = "/icons/graphql.svg";
+const typescriptIcon = "/icons/typescript.svg";
+const contentfulIcon = "/icons/contentful.svg";
+const vercelIcon = "/icons/vercel.svg";
+const netlifyIcon = "/icons/netlify.svg";
+const sendgridIcon = "/icons/sendgrid.svg";
 
 const cssIcon_dark = "/icons/css_dark.svg";
 const htmlIcon_dark = "/icons/html_dark.svg";
@@ -38,10 +45,16 @@ const stripeIcon_dark = "/icons/stripe_dark.svg";
 const strapiIcon_dark = "/icons/strapi_dark.svg";
 const sanityIcon_dark = "/icons/sanity_dark.svg";
 const authIcon_dark = "/icons/auth_dark.svg";
+const styledIcon_dark = "/icons/styled_dark.svg";
+const graphqlIcon_dark = "/icons/graphql_dark.svg";
+const typescriptIcon_dark = "/icons/typescript_dark.svg";
+const contentfulIcon_dark = "/icons/contentful_dark.svg";
+const vercelIcon_dark = "/icons/vercel_dark.svg";
+const netlifyIcon_dark = "/icons/netlify_dark.svg";
+const sendgridIcon_dark = "/icons/sendgrid_dark.svg";
 
 function PortfolioPiece({
   darkMode,
-
   title,
   description,
   techstack,
@@ -192,6 +205,69 @@ function PortfolioPiece({
       return (
         <img
           src={darkMode ? authIcon_dark : authIcon}
+          key={item}
+          className={css.stack_item}
+          data-tip={item}
+        />
+      );
+    } else if (item === "Styled Components") {
+      return (
+        <img
+          src={darkMode ? styledIcon_dark : styledIcon}
+          key={item}
+          className={css.stack_item}
+          data-tip={item}
+        />
+      );
+    } else if (item === "GraphQL") {
+      return (
+        <img
+          src={darkMode ? graphqlIcon_dark : graphqlIcon}
+          key={item}
+          className={css.stack_item}
+          data-tip={item}
+        />
+      );
+    } else if (item === "TypeScript") {
+      return (
+        <img
+          src={darkMode ? typescriptIcon_dark : typescriptIcon}
+          key={item}
+          className={css.stack_item}
+          data-tip={item}
+        />
+      );
+    } else if (item === "Contentful CMS") {
+      return (
+        <img
+          src={darkMode ? contentfulIcon_dark : contentfulIcon}
+          key={item}
+          className={css.stack_item}
+          data-tip={item}
+        />
+      );
+    } else if (item === "Vercel") {
+      return (
+        <img
+          src={darkMode ? vercelIcon_dark : vercelIcon}
+          key={item}
+          className={css.stack_item}
+          data-tip={item}
+        />
+      );
+    } else if (item === "Netlify") {
+      return (
+        <img
+          src={darkMode ? netlifyIcon_dark : netlifyIcon}
+          key={item}
+          className={css.stack_item}
+          data-tip={item}
+        />
+      );
+    } else if (item === "SendGrid") {
+      return (
+        <img
+          src={darkMode ? sendgridIcon_dark : sendgridIcon}
           key={item}
           className={css.stack_item}
           data-tip={item}

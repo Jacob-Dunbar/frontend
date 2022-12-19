@@ -10,7 +10,7 @@ import ScrollDown from "../components/ScrollDown.js";
 import Background from "../components/Background.js";
 import Footer from "../components/Footer.js";
 
-// strapi CMS
+// Contentful CMS
 
 export const getStaticProps = async () => {
   const result = await fetch(
@@ -65,7 +65,7 @@ export const getStaticProps = async () => {
 
 export default function Home({ portfolioPieces }) {
   // dark mode state
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   //useRefs for navigation
   const portfolioSection = useRef(null);
