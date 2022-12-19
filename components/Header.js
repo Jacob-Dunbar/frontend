@@ -8,6 +8,7 @@ import ReactTooltip from "react-tooltip";
 
 export default function ThreeHeader(props) {
   const javascriptIcon = "/icons/javascript.svg";
+  const styledIcon = "/icons/styled.svg";
   const nextjsIcon = "/icons/nextjs.svg";
   const reactIcon = "/icons/react.svg";
   const sassIcon = "/icons/sass.svg";
@@ -18,6 +19,7 @@ export default function ThreeHeader(props) {
   const gitIcon = "/icons/git.svg";
 
   const javascriptIcon_dark = "/icons/javascript_dark.svg";
+  const styledIcon_dark = "/icons/styled_dark.svg";
   const nextjsIcon_dark = "/icons/nextjs_dark.svg";
   const reactIcon_dark = "/icons/react_dark.svg";
   const sassIcon_dark = "/icons/sass_dark.svg";
@@ -84,6 +86,11 @@ export default function ThreeHeader(props) {
             data-tip="Next.js"
           />
           <img
+            src={props.darkMode ? styledIcon_dark : styledIcon}
+            className={css.stack_item}
+            data-tip="Styled Components"
+          />
+          <img
             src={props.darkMode ? sassIcon_dark : sassIcon}
             className={css.stack_item}
             data-tip="Sass"
@@ -132,6 +139,11 @@ export default function ThreeHeader(props) {
           src={props.darkMode ? nextjsIcon_dark : nextjsIcon}
           className={css.stack_item}
           data-tip="Next.js"
+        />
+        <img
+          src={props.darkMode ? styledIcon_dark : styledIcon}
+          className={css.stack_item}
+          data-tip="Styled Components"
         />
         <img
           src={props.darkMode ? sassIcon_dark : sassIcon}
@@ -199,7 +211,11 @@ export default function ThreeHeader(props) {
             props.darkMode ? css.linkedinbtn_dark : css.linkedinbtn_light
           }
         >
-          <a href="https://github.com/Jacob-Dunbar" rel="noopener noreferrer" target="_blank">
+          <a
+            href="https://github.com/Jacob-Dunbar"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             GitHub
           </a>
           <img
