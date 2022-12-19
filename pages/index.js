@@ -10,7 +10,7 @@ import ScrollDown from "../components/ScrollDown.js";
 import Background from "../components/Background.js";
 import Footer from "../components/Footer.js";
 
-// Contentful CMS
+// Contentful cms
 
 export const getStaticProps = async () => {
   const result = await fetch(
