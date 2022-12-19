@@ -228,7 +228,7 @@ function PortfolioPiece({
                 darkMode ? css.btn_livesite_dark : css.btn_livesite_light
               }
             >
-              <a href={livesite} target="_blank">
+              <a href={livesite} rel="noopener noreferrer" target="_blank">
                 Live Site
               </a>
             </button>
@@ -236,7 +236,7 @@ function PortfolioPiece({
           <button
             className={darkMode ? css.btn_github_dark : css.btn_github_light}
           >
-            <a href={repo} target="_blank">
+            <a href={repo} rel="noopener noreferrer" target="_blank">
               Githib Repo
             </a>
           </button>
@@ -244,7 +244,7 @@ function PortfolioPiece({
             style={figma ? { display: "block" } : { display: "none" }}
             className={darkMode ? css.btn_figma_dark : css.btn_figma_light}
           >
-            <a href={figma} target="_blank">
+            <a href={figma} rel="noopener noreferrer" target="_blank">
               Figma Design
             </a>
           </button>
