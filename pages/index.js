@@ -12,52 +12,58 @@ import Footer from "../components/Footer.js";
 
 // strapi CMS
 
-const URL = process.env.STRAPIBASEURL;
+export const getStaticProps = async () => {
+  const result = await fetch(
+    `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: `
+        query {
+          portfolioPieceCollection {
+           items {
+              order
+             name
+             image{
+               url
+               width
+               height
+             }
+             description
+              tech
+             github
+             liveSite
+             figma
+           }
+         }
+         }
+        `,
+      }),
+    }
+  );
 
-export async function getStaticProps(context) {
-  const fetchParams = {
-    method: "post",
-    headers: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify({
-      query: `{
-        portfoliopieces{
-          data{
-            id
-            attributes{
-              title
-              description
-              techstack
-              livesite
-              repo
-              image {
-                data{
-                  attributes{
-                    url
-                  }
-                }
-              }
-              figma
-              details
-            }
-          }
-        }
-        }`,
-    }),
-  };
+  if (!result.ok) {
+    console.log(result);
+    return {};
+  }
 
-  const res = await fetch(`${URL}/graphql`, fetchParams);
-  const data = await res.json();
+  const { data } = await result.json();
+  const portfolioPieces = data.portfolioPieceCollection.items.sort(
+    (a, b) => a.order - b.order
+  );
 
   return {
-    props: data,
-    // check for new data on CMS once every ten seconds
-    revalidate: 10,
+    props: {
+      portfolioPieces,
+    },
   };
-}
+};
 
-export default function Home({ data }) {
+export default function Home({ portfolioPieces }) {
   // dark mode state
   const [darkMode, setDarkMode] = useState(false);
 
@@ -71,6 +77,8 @@ export default function Home({ data }) {
       behavior: "smooth",
     });
   }
+
+  console.log(portfolioPieces);
   return (
     <div className={darkMode ? "background_dark" : "background_light"}>
       <Head>
@@ -105,7 +113,7 @@ export default function Home({ data }) {
       />
 
       <div ref={portfolioSection}></div>
-      <Portfolio darkMode={darkMode} data={data} />
+      <Portfolio darkMode={darkMode} portfolioPieces={portfolioPieces} />
 
       <div ref={contactSection}></div>
       <Contact darkMode={darkMode} />

@@ -39,17 +39,24 @@ const strapiIcon_dark = "/icons/strapi_dark.svg";
 const sanityIcon_dark = "/icons/sanity_dark.svg";
 const authIcon_dark = "/icons/auth_dark.svg";
 
-function PortfolioPiece(props) {
-  const imageUrl = props.image.data[0].attributes.url;
-  const techStack = props.techstack.tech;
+function PortfolioPiece({
+  darkMode,
 
+  title,
+  description,
+  techstack,
+  livesite,
+  repo,
+  image,
+  figma,
+}) {
   // Create array of tech badges for JSON data from strapi
 
-  const stackElements = techStack.map((item) => {
+  const stackElements = techstack.map((item) => {
     if (item === "HTML") {
       return (
         <img
-          src={props.darkMode ? htmlIcon_dark : htmlIcon}
+          src={darkMode ? htmlIcon_dark : htmlIcon}
           key={item}
           className={css.stack_item}
           data-tip={item}
@@ -58,7 +65,7 @@ function PortfolioPiece(props) {
     } else if (item === "CSS") {
       return (
         <img
-          src={props.darkMode ? cssIcon_dark : cssIcon}
+          src={darkMode ? cssIcon_dark : cssIcon}
           key={item}
           className={css.stack_item}
           data-tip={item}
@@ -67,7 +74,7 @@ function PortfolioPiece(props) {
     } else if (item === "React") {
       return (
         <img
-          src={props.darkMode ? reactIcon_dark : reactIcon}
+          src={darkMode ? reactIcon_dark : reactIcon}
           key={item}
           className={css.stack_item}
           data-tip={item}
@@ -76,7 +83,7 @@ function PortfolioPiece(props) {
     } else if (item === "Next.js") {
       return (
         <img
-          src={props.darkMode ? nextjsIcon_dark : nextjsIcon}
+          src={darkMode ? nextjsIcon_dark : nextjsIcon}
           key={item}
           className={css.stack_item}
           data-tip={item}
@@ -85,7 +92,7 @@ function PortfolioPiece(props) {
     } else if (item === "JavaScript") {
       return (
         <img
-          src={props.darkMode ? javascriptIcon_dark : javascriptIcon}
+          src={darkMode ? javascriptIcon_dark : javascriptIcon}
           key={item}
           className={css.stack_item}
           data-tip={item}
@@ -94,7 +101,7 @@ function PortfolioPiece(props) {
     } else if (item === "SASS") {
       return (
         <img
-          src={props.darkMode ? sassIcon_dark : sassIcon}
+          src={darkMode ? sassIcon_dark : sassIcon}
           key={item}
           className={css.stack_item}
           data-tip={item}
@@ -103,16 +110,16 @@ function PortfolioPiece(props) {
     } else if (item === "Tailwind") {
       return (
         <img
-          src={props.darkMode ? tailwindIcon_dark : tailwindIcon}
+          src={darkMode ? tailwindIcon_dark : tailwindIcon}
           key={item}
           className={css.stack_item}
           data-tip={item}
         />
       );
-    } else if (item === "Three") {
+    } else if (item === "Three.js") {
       return (
         <img
-          src={props.darkMode ? threejsIcon_dark : threejsIcon}
+          src={darkMode ? threejsIcon_dark : threejsIcon}
           key={item}
           className={css.stack_item}
           data-tip={item}
@@ -121,7 +128,7 @@ function PortfolioPiece(props) {
     } else if (item === "Blender 3D") {
       return (
         <img
-          src={props.darkMode ? blenderIcon_dark : blenderIcon}
+          src={darkMode ? blenderIcon_dark : blenderIcon}
           key={item}
           className={css.stack_item}
           data-tip={item}
@@ -130,7 +137,7 @@ function PortfolioPiece(props) {
     } else if (item === "Figma") {
       return (
         <img
-          src={props.darkMode ? figmaIcon_dark : figmaIcon}
+          src={darkMode ? figmaIcon_dark : figmaIcon}
           key={item}
           className={css.stack_item}
           data-tip={item}
@@ -139,7 +146,7 @@ function PortfolioPiece(props) {
     } else if (item === "git") {
       return (
         <img
-          src={props.darkMode ? gitIcon_dark : gitIcon}
+          src={darkMode ? gitIcon_dark : gitIcon}
           key={item}
           className={css.stack_item}
           data-tip={item}
@@ -148,7 +155,7 @@ function PortfolioPiece(props) {
     } else if (item === "Framer Motion") {
       return (
         <img
-          src={props.darkMode ? framerIcon_dark : framerIcon}
+          src={darkMode ? framerIcon_dark : framerIcon}
           key={item}
           className={css.stack_item}
           data-tip={item}
@@ -157,7 +164,7 @@ function PortfolioPiece(props) {
     } else if (item === "Sanity CMS") {
       return (
         <img
-          src={props.darkMode ? sanityIcon_dark : sanityIcon}
+          src={darkMode ? sanityIcon_dark : sanityIcon}
           key={item}
           className={css.stack_item}
           data-tip={item}
@@ -166,7 +173,7 @@ function PortfolioPiece(props) {
     } else if (item === "Strapi CMS") {
       return (
         <img
-          src={props.darkMode ? strapiIcon_dark : strapiIcon}
+          src={darkMode ? strapiIcon_dark : strapiIcon}
           key={item}
           className={css.stack_item}
           data-tip={item}
@@ -175,7 +182,7 @@ function PortfolioPiece(props) {
     } else if (item === "Stripe Payments") {
       return (
         <img
-          src={props.darkMode ? stripeIcon_dark : stripeIcon}
+          src={darkMode ? stripeIcon_dark : stripeIcon}
           key={item}
           className={css.stack_item}
           data-tip={item}
@@ -184,7 +191,7 @@ function PortfolioPiece(props) {
     } else if (item === "Auth0") {
       return (
         <img
-          src={props.darkMode ? authIcon_dark : authIcon}
+          src={darkMode ? authIcon_dark : authIcon}
           key={item}
           className={css.stack_item}
           data-tip={item}
@@ -193,11 +200,11 @@ function PortfolioPiece(props) {
     }
   });
 
-  const stackElements2 = techStack.map((item, i) => {
+  const stackElements2 = techstack.map((item, i) => {
     return (
       <div
         key={i}
-        className={props.darkMode ? css.techItem_dark : css.techItem_light}
+        className={darkMode ? css.techItem_dark : css.techItem_light}
       >
         <h5 className={css.bold}>{item}</h5>
       </div>
@@ -206,44 +213,38 @@ function PortfolioPiece(props) {
 
   return (
     <div
-      className={
-        props.darkMode ? css.portfolioCard_dark : css.portfolioCard_light
-      }
+      className={darkMode ? css.portfolioCard_dark : css.portfolioCard_light}
     >
       <ReactTooltip className={css.tooltip} />
-      <img className={css.thumbnail} src={imageUrl} alt="thumbnail" />
+      <img className={css.thumbnail} src={image.url} alt="thumbnail" />
       <div className={css.body}>
-        <h1>{props.title}</h1>
-        <ReactMarkdown remarkPlugins={[gfm]}>{props.description}</ReactMarkdown>
+        <h1>{title}</h1>
+        <ReactMarkdown remarkPlugins={[gfm]}>{description}</ReactMarkdown>
         <div className={css.stack}>{stackElements}</div>
         <div className={css.buttons}>
-          {props.livesite !== "null" && (
+          {livesite !== "null" && (
             <button
               className={
-                props.darkMode ? css.btn_livesite_dark : css.btn_livesite_light
+                darkMode ? css.btn_livesite_dark : css.btn_livesite_light
               }
             >
-              <a href={props.livesite} target="_blank">
+              <a href={livesite} target="_blank">
                 Live Site
               </a>
             </button>
           )}
           <button
-            className={
-              props.darkMode ? css.btn_github_dark : css.btn_github_light
-            }
+            className={darkMode ? css.btn_github_dark : css.btn_github_light}
           >
-            <a href={props.repo} target="_blank">
+            <a href={repo} target="_blank">
               Githib Repo
             </a>
           </button>
           <button
-            style={props.figma ? { display: "block" } : { display: "none" }}
-            className={
-              props.darkMode ? css.btn_figma_dark : css.btn_figma_light
-            }
+            style={figma ? { display: "block" } : { display: "none" }}
+            className={darkMode ? css.btn_figma_dark : css.btn_figma_light}
           >
-            <a href={props.figma} target="_blank">
+            <a href={figma} target="_blank">
               Figma Design
             </a>
           </button>
