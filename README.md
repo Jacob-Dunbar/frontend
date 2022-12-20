@@ -1,34 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Jacob Dunbar - Personal portfolio site
 
-## Getting Started
+A portfolio site to display my top projects and provide easy access to my contact details and CV, whilst conveying a little of my personality too.
 
-First, run the development server:
+## Table of contents
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- [Overview](#overview)
+  - [About](#about)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Overview
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### About
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- The site features an interactive 3D header that looks and behaves differently in light and dark modes. 
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- A portfolio section that pulls portfolio projects with GraphQL from Contentful CMS and displays them. Generating tech badges for each technology listed in a JSON provided by Contentful.
 
-## Learn More
+- A contact form that uses SendGrid to send emails to my personal email address from the site. 
 
-To learn more about Next.js, take a look at the following resources:
+### Screenshot
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![](./screenshot.jpg)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Links
 
-## Deploy on Vercel
+- [Live site](https://jacobdunbar.com)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## My process
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Built with
+
+- Next.js
+- Sass
+- Strapi CMS
+- Heroku
+- Contentful CMS
+- GraphQL
+- Netlify
+- Three.js
+- React Three Fiber
+
+### What I learned
+
+I originally deployed this site with a separate backend and Strapi CMS hosted by Heroku. However, after Heroku announced the end of their free tier I decided to move over to Contentful. I had just had a really positive experience using Contentful in another project so it was really easy to switch over. I did however learn a lot by using Strapi and Heroku, even if they are no longer used for this site.
+
+I had already had a lot of practice with Sass, but completing a full project using variables, functions and mixins  was a great learning experience and I really enjoy working with sass over vanilla CSS.
+
+This Site uses Three.js and React Three Fiber slightly more intensely that my other projects, due to the interactivity of the models. The light mode character turns to face the user’s cursor on the screen and the dark mode character is lit by a light whose position is also linked to the cursor. There is also a secret behaviour that occurs if the user clicks the character, but wanted to leave that a surprise for anyone who happens to try. This interactivity was challenging but extremely fun. Working with Three.js is definitely something I will continue to do in my free time. 
+
+Learning how to make a contact form was really interesting and I can imagine many circumstances where a feature like this would be useful. 
+
+### Continued development
+
+I feel like my personal site is an opportunity to show a bit of my personality and incorporate some of my additional skills and hobbies. I would like to include more 3D elements, either as Blender 3D illustrations or fully animated and interactive Three.js creations. I am very inspired by the work of [Bruno Simon](https://www.bruno-simon.com) and would love to continue learning about 3D and eventually reach this level. He has a course that I would love to take to further my skills in this area.
+
+
+### Useful resources
+
+- [Bruno Simon](https://www.bruno-simon.com) - Extremely inspiring work from a master of 3D web development. I think 3D will play an increasingly significant role in web development in the future and would love to be a part of that.
+- [Three js, React Three Fiber, React Three Drei Tutorial 2022 | Part 1 | Getting started](https://www.youtube.com/watch?v=y5CAuAZ7kKM&list=PLIRTsuB0iPJvxaYyg8MOrjffPPcYnccL0) - This playlist of six videos from Devving It With Sohail was one of the key resources I used for the 3D header of this site. He delves deeper in these videos than most tutorials on the subject, and really helped me get to grips with some difficult concepts.
+- [Contentful Docs](contentful.com/developers/docs/) - Contentful has really great documentation that guided me through the process of setting up the CMS and linking it to my project. I would definitely recommend Contentful to anyone looking for a headless CMS.
+
+## Author
+
+Jacob Dunbar
+[jacobdunbar.com](https://www.jacobdunbar.com)
