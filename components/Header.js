@@ -31,7 +31,7 @@ export default function ThreeHeader(props) {
 
   return (
     <div className={css.home}>
-      {/* <ReactTooltip className={css.tooltip} /> */}
+      <ReactTooltip className={css.tooltip} />
 
       {/* light mode face model */}
       <Canvas className={!props.darkMode ? css.show : css.hidden}>

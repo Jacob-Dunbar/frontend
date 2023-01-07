@@ -291,7 +291,7 @@ function PortfolioPiece({
     <div
       className={darkMode ? css.portfolioCard_dark : css.portfolioCard_light}
     >
-      {/* <ReactTooltip className={css.tooltip} /> */}
+      <ReactTooltip className={css.tooltip} />
       <img className={css.thumbnail} src={image.url} alt="thumbnail" />
       <div className={css.body}>
         <h1>{title}</h1>
