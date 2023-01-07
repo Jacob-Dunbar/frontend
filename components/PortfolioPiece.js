@@ -287,7 +287,6 @@ function PortfolioPiece({
     );
   });
 
-  console.log(livesite);
   return (
     <div
       className={darkMode ? css.portfolioCard_dark : css.portfolioCard_light}
