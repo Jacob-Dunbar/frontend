@@ -53,20 +53,21 @@ export const getStaticProps = async () => {
 
   const { data } = await result.json();
 
+  const portfolioPieces = data.portfolioPieceCollection.items.sort(
+    (a, b) => a.order - b.order
+  );
+
   return {
     props: {
-      data,
+      portfolioPieces,
     },
   };
 };
 
-export default function Home({ data }) {
+export default function Home({ portfolioPieces }) {
   // dark mode state
   const [darkMode, setDarkMode] = useState(false);
-  console.log(data);
-  const portfolioPieces = data.portfolioPieceCollection.items.sort(
-    (a, b) => a.order - b.order
-  );
+  console.log(portfolioPieces);
 
   //useRefs for navigation
   const portfolioSection = useRef(null);
