@@ -65,7 +65,7 @@ export const getStaticProps = async () => {
 
 export default function Home({ portfolioPieces }) {
   // dark mode state
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   //useRefs for navigation
   const portfolioSection = useRef(null);
@@ -78,7 +78,7 @@ export default function Home({ portfolioPieces }) {
     });
   }
 
-  console.log(portfolioPieces);
+
   return (
     <div className={darkMode ? "background_dark" : "background_light"}>
       <Head>
