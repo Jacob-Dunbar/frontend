@@ -34,7 +34,7 @@ export const getStaticProps = async () => {
                height
              }
              description
-              tech
+             tech
              github
              liveSite
              figma
@@ -52,20 +52,21 @@ export const getStaticProps = async () => {
   }
 
   const { data } = await result.json();
-  const portfolioPieces = data.portfolioPieceCollection.items.sort(
-    (a, b) => a.order - b.order
-  );
 
   return {
     props: {
-      portfolioPieces,
+      data,
     },
   };
 };
 
-export default function Home({ portfolioPieces }) {
+export default function Home({ data }) {
   // dark mode state
   const [darkMode, setDarkMode] = useState(false);
+  console.log(data);
+  const portfolioPieces = data.portfolioPieceCollection.items.sort(
+    (a, b) => a.order - b.order
+  );
 
   //useRefs for navigation
   const portfolioSection = useRef(null);
@@ -77,7 +78,6 @@ export default function Home({ portfolioPieces }) {
       behavior: "smooth",
     });
   }
-
 
   return (
     <div className={darkMode ? "background_dark" : "background_light"}>
