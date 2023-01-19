@@ -23,8 +23,12 @@
     font-family: $font-primary;
     display: flex;
     align-items: center;
-    gap: 25px;
+
     letter-spacing: 1px;
+
+    li {
+      margin-right: 25px;
+    }
   }
 }
 
