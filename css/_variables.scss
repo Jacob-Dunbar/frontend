@@ -5,7 +5,7 @@
 $light-text: #1f2023;
 $light-background: #f1f4ef;
 $light-background2: #fdfffc;
-$light-primary: #2191fb;
+$light-primary: #4576a9;
 $light-secondary: #f75f1e;
 
 // Dark mode
@@ -40,7 +40,7 @@ $font-secondary: "Inter", sans-serif;
   cursor: pointer;
   background-color: $bgcol;
   color: $textcol;
-  border: 2px $bordercol solid;
+  border: 1px $bordercol solid;
   display: flex;
   justify-content: center;
   align-items: center;

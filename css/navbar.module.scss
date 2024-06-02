@@ -23,12 +23,8 @@
     font-family: $font-primary;
     display: flex;
     align-items: center;
-
+    gap: 25px;
     letter-spacing: 1px;
-
-    li {
-      margin-right: 25px;
-    }
   }
 }
 
@@ -54,10 +50,6 @@
   }
 }
 
-.cv_light {
-  display: none;
-}
-
 // navbar dark
 
 .navbar_dark {
@@ -80,13 +72,9 @@
   }
 }
 
-.cv_dark {
-  display: none;
-}
-
 // mobile styles
 
-@media (max-width: 414px) {
+@media (max-width: 431px) {
   .navbar_light {
     justify-content: flex-end;
     align-items: flex-end;

@@ -3,56 +3,6 @@ import ReactTooltip from "react-tooltip";
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
 
-// Techstack badge svg paths
-
-const cssIcon = "/icons/css.svg";
-const htmlIcon = "/icons/html.svg";
-const javascriptIcon = "/icons/javascript.svg";
-const nextjsIcon = "/icons/nextjs.svg";
-const reactIcon = "/icons/react.svg";
-const sassIcon = "/icons/sass.svg";
-const tailwindIcon = "/icons/tailwind.svg";
-const threejsIcon = "/icons/threejs.svg";
-const blenderIcon = "/icons/blender.svg";
-const figmaIcon = "/icons/figma.svg";
-const gitIcon = "/icons/git.svg";
-const framerIcon = "/icons/framer.svg";
-const stripeIcon = "/icons/stripe.svg";
-const strapiIcon = "/icons/strapi.svg";
-const sanityIcon = "/icons/sanity.svg";
-const authIcon = "/icons/auth.svg";
-const styledIcon = "/icons/styled.svg";
-const graphqlIcon = "/icons/graphql.svg";
-const typescriptIcon = "/icons/typescript.svg";
-const contentfulIcon = "/icons/contentful.svg";
-const vercelIcon = "/icons/vercel.svg";
-const netlifyIcon = "/icons/netlify.svg";
-const sendgridIcon = "/icons/sendgrid.svg";
-
-const cssIcon_dark = "/icons/css_dark.svg";
-const htmlIcon_dark = "/icons/html_dark.svg";
-const javascriptIcon_dark = "/icons/javascript_dark.svg";
-const nextjsIcon_dark = "/icons/nextjs_dark.svg";
-const reactIcon_dark = "/icons/react_dark.svg";
-const sassIcon_dark = "/icons/sass_dark.svg";
-const tailwindIcon_dark = "/icons/tailwind_dark.svg";
-const threejsIcon_dark = "/icons/threejs_dark.svg";
-const blenderIcon_dark = "/icons/blender_dark.svg";
-const figmaIcon_dark = "/icons/figma_dark.svg";
-const gitIcon_dark = "/icons/git_dark.svg";
-const framerIcon_dark = "/icons/framer_dark.svg";
-const stripeIcon_dark = "/icons/stripe_dark.svg";
-const strapiIcon_dark = "/icons/strapi_dark.svg";
-const sanityIcon_dark = "/icons/sanity_dark.svg";
-const authIcon_dark = "/icons/auth_dark.svg";
-const styledIcon_dark = "/icons/styled_dark.svg";
-const graphqlIcon_dark = "/icons/graphql_dark.svg";
-const typescriptIcon_dark = "/icons/typescript_dark.svg";
-const contentfulIcon_dark = "/icons/contentful_dark.svg";
-const vercelIcon_dark = "/icons/vercel_dark.svg";
-const netlifyIcon_dark = "/icons/netlify_dark.svg";
-const sendgridIcon_dark = "/icons/sendgrid_dark.svg";
-
 function PortfolioPiece({
   darkMode,
   title,
@@ -63,217 +13,15 @@ function PortfolioPiece({
   image,
   figma,
 }) {
-  // Create array of tech badges for JSON data from strapi
-
   const stackElements = techstack.map((item) => {
-    if (item === "HTML") {
-      return (
-        <img
-          src={darkMode ? htmlIcon_dark : htmlIcon}
-          key={item}
-          className={css.stack_item}
-          data-tip={item}
-        />
-      );
-    } else if (item === "CSS") {
-      return (
-        <img
-          src={darkMode ? cssIcon_dark : cssIcon}
-          key={item}
-          className={css.stack_item}
-          data-tip={item}
-        />
-      );
-    } else if (item === "React") {
-      return (
-        <img
-          src={darkMode ? reactIcon_dark : reactIcon}
-          key={item}
-          className={css.stack_item}
-          data-tip={item}
-        />
-      );
-    } else if (item === "Next.js") {
-      return (
-        <img
-          src={darkMode ? nextjsIcon_dark : nextjsIcon}
-          key={item}
-          className={css.stack_item}
-          data-tip={item}
-        />
-      );
-    } else if (item === "JavaScript") {
-      return (
-        <img
-          src={darkMode ? javascriptIcon_dark : javascriptIcon}
-          key={item}
-          className={css.stack_item}
-          data-tip={item}
-        />
-      );
-    } else if (item === "SASS") {
-      return (
-        <img
-          src={darkMode ? sassIcon_dark : sassIcon}
-          key={item}
-          className={css.stack_item}
-          data-tip={item}
-        />
-      );
-    } else if (item === "Tailwind") {
-      return (
-        <img
-          src={darkMode ? tailwindIcon_dark : tailwindIcon}
-          key={item}
-          className={css.stack_item}
-          data-tip={item}
-        />
-      );
-    } else if (item === "Three.js") {
-      return (
-        <img
-          src={darkMode ? threejsIcon_dark : threejsIcon}
-          key={item}
-          className={css.stack_item}
-          data-tip={item}
-        />
-      );
-    } else if (item === "Blender 3D") {
-      return (
-        <img
-          src={darkMode ? blenderIcon_dark : blenderIcon}
-          key={item}
-          className={css.stack_item}
-          data-tip={item}
-        />
-      );
-    } else if (item === "Figma") {
-      return (
-        <img
-          src={darkMode ? figmaIcon_dark : figmaIcon}
-          key={item}
-          className={css.stack_item}
-          data-tip={item}
-        />
-      );
-    } else if (item === "git") {
-      return (
-        <img
-          src={darkMode ? gitIcon_dark : gitIcon}
-          key={item}
-          className={css.stack_item}
-          data-tip={item}
-        />
-      );
-    } else if (item === "Framer Motion") {
-      return (
-        <img
-          src={darkMode ? framerIcon_dark : framerIcon}
-          key={item}
-          className={css.stack_item}
-          data-tip={item}
-        />
-      );
-    } else if (item === "Sanity CMS") {
-      return (
-        <img
-          src={darkMode ? sanityIcon_dark : sanityIcon}
-          key={item}
-          className={css.stack_item}
-          data-tip={item}
-        />
-      );
-    } else if (item === "Strapi CMS") {
-      return (
-        <img
-          src={darkMode ? strapiIcon_dark : strapiIcon}
-          key={item}
-          className={css.stack_item}
-          data-tip={item}
-        />
-      );
-    } else if (item === "Stripe Payments") {
-      return (
-        <img
-          src={darkMode ? stripeIcon_dark : stripeIcon}
-          key={item}
-          className={css.stack_item}
-          data-tip={item}
-        />
-      );
-    } else if (item === "Auth0") {
-      return (
-        <img
-          src={darkMode ? authIcon_dark : authIcon}
-          key={item}
-          className={css.stack_item}
-          data-tip={item}
-        />
-      );
-    } else if (item === "Styled Components") {
-      return (
-        <img
-          src={darkMode ? styledIcon_dark : styledIcon}
-          key={item}
-          className={css.stack_item}
-          data-tip={item}
-        />
-      );
-    } else if (item === "GraphQL") {
-      return (
-        <img
-          src={darkMode ? graphqlIcon_dark : graphqlIcon}
-          key={item}
-          className={css.stack_item}
-          data-tip={item}
-        />
-      );
-    } else if (item === "TypeScript") {
-      return (
-        <img
-          src={darkMode ? typescriptIcon_dark : typescriptIcon}
-          key={item}
-          className={css.stack_item}
-          data-tip={item}
-        />
-      );
-    } else if (item === "Contentful CMS") {
-      return (
-        <img
-          src={darkMode ? contentfulIcon_dark : contentfulIcon}
-          key={item}
-          className={css.stack_item}
-          data-tip={item}
-        />
-      );
-    } else if (item === "Vercel") {
-      return (
-        <img
-          src={darkMode ? vercelIcon_dark : vercelIcon}
-          key={item}
-          className={css.stack_item}
-          data-tip={item}
-        />
-      );
-    } else if (item === "Netlify") {
-      return (
-        <img
-          src={darkMode ? netlifyIcon_dark : netlifyIcon}
-          key={item}
-          className={css.stack_item}
-          data-tip={item}
-        />
-      );
-    } else if (item === "SendGrid") {
-      return (
-        <img
-          src={darkMode ? sendgridIcon_dark : sendgridIcon}
-          key={item}
-          className={css.stack_item}
-          data-tip={item}
-        />
-      );
-    }
+    return (
+      <img
+        src={darkMode ? `/icons/${item}_dark.svg` : `/icons/${item}.svg`}
+        key={item}
+        className={css.stack_item}
+        data-tip={item}
+      />
+    );
   });
 
   const stackElements2 = techstack.map((item, i) => {
@@ -310,6 +58,7 @@ function PortfolioPiece({
             </button>
           )}
           <button
+            style={repo ? { display: "block" } : { display: "none" }}
             className={darkMode ? css.btn_github_dark : css.btn_github_light}
           >
             <a href={repo} rel="noopener noreferrer" target="_blank">

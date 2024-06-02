@@ -14,15 +14,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  gap: 15px;
 
   h1 {
     font-size: 1.9rem;
     letter-spacing: 1px;
-    margin-bottom: 15px;
-  }
-
-  h2 {
-    margin-bottom: 15px;
   }
 
   p {
@@ -163,12 +159,8 @@
   transform: translate(-50%);
   display: flex;
   justify-content: center;
-
+  gap: 18px;
   z-index: 2;
-
-  button:nth-of-type(2) {
-    margin-left: 18px;
-  }
 
   .mail_icon {
     width: 18px;
@@ -193,8 +185,6 @@
   filter: brightness(0.6);
   opacity: 0.8;
   z-index: 50;
-
-  margin-left: 5px;
 
   &:hover {
     filter: brightness(1);
@@ -224,8 +214,9 @@
 
 // Mobile styles
 
-@media (max-width: 414px) {
+@media (max-width: 431px) {
   .home {
+    padding-top: 20px;
     height: 93vh;
   }
 

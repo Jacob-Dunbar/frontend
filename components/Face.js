@@ -12,10 +12,8 @@ export default function Model({ ...props }) {
 
   useFrame((state) => {
     if (!!orbitControlsRef.current) {
-      // console.log(y * angleToRadians(90 - 30));
       orbitControlsRef.current.setAzimuthalAngle(-x * angleToRadians(45));
       orbitControlsRef.current.setPolarAngle((y + 1) * angleToRadians(90 - 30));
-      // orbitControlsRef.current.setPolarAngle(angleToRadians(y));
       orbitControlsRef.current.update();
     }
   });

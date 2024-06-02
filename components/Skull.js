@@ -11,7 +11,7 @@ export default function Model({ ...props }) {
   const [clicked, setClicked] = useState(false);
 
   // Set state for if on mobile or desktop
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 415);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 435);
 
   // Function to change state of isMobile
   const updateIsMobile = () => {
@@ -28,7 +28,7 @@ export default function Model({ ...props }) {
   // useSpring to light change headClicked state set to true onClick
 
   const spring = useSpring({
-    intensity: clicked ? 0.15 : 0.075,
+    intensity: clicked ? 0.075 : 0.15,
   });
 
   // Get viewport size from state model using useThree hook

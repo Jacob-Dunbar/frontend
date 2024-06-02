@@ -3,39 +3,31 @@
 // Base card style
 
 @mixin portfolio-card-base-style {
-  border-radius: 5px;
   overflow: hidden;
-
-  box-shadow: 0px 10px 25px 0px #0000001a;
-
   display: flex;
-
   width: 90%;
   max-width: 900px;
-  margin-bottom: 5vh;
 
   .thumbnail {
     width: 45%;
     object-fit: cover;
     object-position: top;
     aspect-ratio: 3 / 2;
-
-    opacity: 1;
+    opacity: 0.5;
     transition: opacity 0.5s ease;
   }
 
   .body {
-    padding: 25px 25px;
+    padding: 5px 25px;
 
     display: flex;
     flex-direction: column;
     gap: 12px;
 
     h1 {
-      font-family: $font-primary;
+      font-family: $font-secondary;
       font-weight: 400;
       font-size: 1.1rem;
-      margin-bottom: 5px;
     }
 
     p {
@@ -44,7 +36,6 @@
       line-height: 1.4;
       font-weight: 400;
       opacity: 0.8;
-      margin-bottom: 5px;
     }
 
     .stack {
@@ -52,7 +43,6 @@
       align-items: center;
       justify-content: flex-start;
       gap: 12px;
-
       margin-top: -10px;
 
       height: 50px;
@@ -62,7 +52,6 @@
         max-height: 30px;
         filter: brightness(0.6);
         opacity: 0.8;
-        margin-right: 5px;
 
         &:hover {
           filter: brightness(1);
@@ -78,7 +67,6 @@
 .portfolioCard_light {
   @include portfolio-card-base-style();
   color: $light-text;
-  background-color: rgba($light-background2, 0.2);
   &:hover {
     .thumbnail {
       opacity: 1;
@@ -89,7 +77,6 @@
 .portfolioCard_dark {
   @include portfolio-card-base-style();
   color: $dark-text;
-  background-color: rgba($dark-background2, 0.5);
   &:hover {
     .thumbnail {
       opacity: 1;
@@ -105,10 +92,6 @@
   margin-top: auto;
   display: flex;
   gap: 15px;
-
-  button:nth-child(2) {
-    margin-left: 5px;
-  }
 }
 
 //dark
@@ -156,7 +139,7 @@
 
 //mobile styles
 
-@media (max-width: 415px) {
+@media (max-width: 431px) {
   .portfolioCard_light {
     @include portfolio-card-base-style();
     color: $light-text;

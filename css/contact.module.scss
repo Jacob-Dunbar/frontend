@@ -11,7 +11,6 @@
   p {
     label {
       font-size: 0.9rem;
-      color: $bordercol;
     }
 
     input {
@@ -20,7 +19,7 @@
       margin-top: 10px;
       padding-left: 10px;
       border-radius: 8px;
-      height: 6vh;
+      padding-block: 8px;
       background-color: rgba($bgcol, 0.5);
       outline: none;
       border: none;
@@ -75,7 +74,7 @@
     }
   }
 
-  @media (max-width: 414px) {
+  @media (max-width: 431px) {
     padding-inline: 5px;
   }
 }

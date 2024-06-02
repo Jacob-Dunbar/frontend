@@ -14,14 +14,14 @@ function Navbar(props) {
           />
         </li>
         <li onClick={() => props.scrollToSection(props.portfolioSection)}>
-          Portfolio &gt;
+          Portfolio
         </li>
         <li onClick={() => props.scrollToSection(props.contactSection)}>
-          Contact &gt;
+          Contact
         </li>
-        <li>
-          <Link href={"http://www.jacobdunbar-cv.com/"}> CV &gt; </Link>
-        </li>
+        {/* <li>
+          <Link href={"http://www.jacobdunbar-cv.com/"}> CV</Link>
+        </li> */}
         <li className={props.darkMode ? css.cv_dark : css.cv_light}>
           <Link
             rel="noopener noreferrer"
@@ -29,7 +29,7 @@ function Navbar(props) {
             href={"./jacobDunbarCV.pdf"}
             download
           >
-            CV &gt;
+            CV
           </Link>
         </li>
       </ul>

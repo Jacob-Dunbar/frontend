@@ -12,12 +12,11 @@ export default function Model({ ...props }) {
   const [hovered, setHovered] = useState(false);
 
   // Set state for if on mobile or desktop
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 415);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 435);
 
   // Function to change state of isMobile
   const updateIsMobile = () => {
     setIsMobile(window.innerWidth < 415);
-
   };
 
   // Add event listener for screen resize and run updateIsMobile, plus cleanup.
